@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* &::-webkit-scrollbar{
+        appearance: none;
+    } */
+}
+
+.container{ 
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.info{
+    display: none;
+}
+.show{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    background-color: #00000088;
+    left: 0%;
+    top: 0;
+}
+
+:hover.item > p{
+    color: white;
+}
+:hover.item > .icon1{
+    color: white;
+}
+.text{
+    color: rgba(45, 54, 99, 0.75);
+}
+.image{
+    border: 16px solid #fff;
+    border-radius: 50%;
+}
+.images{
+    background-image: url('../assets/images/orqa.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* swiper css */
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* accardion css */
+.text1 {
+    display: none;
+}
+.text2 {
+    display: none;
+}
+
+.images1{
+    height: 200px;
+    background-image: url('../assets/images/image1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.backround_image{
+    height: 200px;
+    background-image: url('../assets/images/image1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.doctors_images{
+    height: 200px;
+    background-image: url('../assets/images/doctors.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.doctor_image{
+    height: 200px;
+    background-image: url('../assets/images/doctor.webp');
+    background-size: cover;
+    background-position: center;
+}
+.services_image{
+    height: 200px;
+    background-image: url('../assets/images/doctor.webp');
+    background-size: cover;
+    background-position: center;
+}
