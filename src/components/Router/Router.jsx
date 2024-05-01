@@ -10,6 +10,7 @@ import Articles from '../Pages/Articles/Articles'
 import Connections from '../Pages/Connection/Connection'
 import Doctors from '../Shifokorlar/Doctors'
 import Doctor from '../Shifokorlar/Doctor'
+import Section1 from '../Pages/Articles/Section1'
 
 
 
@@ -27,6 +28,7 @@ const Router = () => {
                 <Route path='/connections' element={<Connections/>}/>
                 <Route path='/doctors' element={<Doctors/>}/>
                 <Route path='/doctor' element={<Doctor/>}/>
+                <Route path='/maqola' element={<Section1/>}/>
             </Routes>
         </Layout>
     </div>

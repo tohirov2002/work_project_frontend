@@ -109,3 +109,29 @@
     background-size: cover;
     background-position: center;
 }
+.article_image{
+    height: 200px;
+    background-image: url('../assets/images/maqola4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.article_image1{
+    background-image: url('../assets/images/maqola4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.borders{
+    border: 2px solid #2D3663;
+}
+:hover.hover_img{
+   transform: scale(1.05); 
+   cursor: pointer;
+}
+.hover_img {
+    transition: .3s linear;
+}
+.border_dashet{
+    margin-top: 20px;
+    border: 1px dashed #878ca1;
+}

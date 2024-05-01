@@ -1,8 +1,11 @@
 import React from 'react'
+import Section from './Section'
 
 const Articles = () => {
   return (
-    <div>Articles</div>
+    <main>
+      <Section/>
+    </main>
   )
 }
 

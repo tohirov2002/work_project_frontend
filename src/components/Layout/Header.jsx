@@ -23,7 +23,7 @@ function Header() {
             <li className='ml-[150px]'>
               <NavLink to={'/about'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer font-bold shadow-xl'>{ t("soz1") }</NavLink>
               <NavLink to={'/services'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz2") }</NavLink>
-              <NavLink to={'/departaments'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz3") }</NavLink>
+              <NavLink to={'/doctors'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz3") }</NavLink>
               <NavLink to={'/Insurance'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz4") }</NavLink>
               <NavLink to={'/Articles'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz5") }</NavLink>
               <NavLink to={'/connections'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz6") }</NavLink>

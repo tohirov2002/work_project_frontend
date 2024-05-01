@@ -1,8 +1,11 @@
 import React from 'react'
+import Section from './Section'
 
 const Connection = () => {
   return (
-    <div>Connection</div>
+    <main>
+      <Section/>
+    </main>
   )
 }
 
