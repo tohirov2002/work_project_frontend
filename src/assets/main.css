@@ -135,3 +135,17 @@
     margin-top: 20px;
     border: 1px dashed #878ca1;
 }
+.show1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000088;
+}
