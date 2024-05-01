@@ -57,13 +57,13 @@ const Section1 = () => {
                     </div>
                     <p className='text-[#878ca1] mt-5 text-[18px] max-w-[750px]'>Professor Gurkan Telliog'lu gepatobiliar maqsadli mutaxassislik. U umumiy. organ transplantatsiyasi bilan davolash va Kelveland klinikasi Professor John Fun bilan malaka oshirgan.</p>
                     <p className='text-[#878ca1] mt-5 text-[18px] max-w-[750px]'>Professor Barbaros Chil AQShdagi Indina universiteti-Purdue universiteti tibbiyot fakultetida intervention radiologiya bo'yicha malakasini olgan. 2012-yildan beri u Yevropa yurak-qon tomir va intervention radiologiya jamiyatining aʼzosi.</p>
-                    <p className='text-[#2D3663] font-bold mt-5 text-[18px] max-w-[750px]'>Malakali mutahasis qabuliga yozilishni unutmang, Joylar soni sheklangan !</p>
+                    <p className='text-[#878ca1] font-bold mt-5 text-[18px] max-w-[750px]'>Malakali mutahasis qabuliga yozilishni unutmang, Joylar soni cheklangan !</p>
                     <div className='flex items-center mt-5'>
-                        <FaPhoneAlt className='cursor-pointer w-[20px] h-[20px] text-blue-950'/>
+                        <FaPhoneAlt className='cursor-pointer w-[20px] h-[20px] text-[#878ca1]'/>
                         <p className='cursor-pointer ml-5 text-[18px] text-[#878ca1] max-w-[400px]'>Phone Number: +998 556 33 11</p>
                     </div>
                     <div className='flex items-center mt-5'>
-                        <FaLocationDot className='cursor-pointer w-[25px] h-[25px] text-blue-950'/>
+                        <FaLocationDot className='cursor-pointer w-[25px] h-[25px] text-[#878ca1]'/>
                         <p className='ml-5 text-[18px] text-[#878ca1] max-w-[400px]'>Toshkent shahar, Yangihayot tumani, massiv Yo’ldosh 7 kvartal 9 uy</p>
                     </div>
                     <div className='flex items-center mt-[30px] gap-3'>

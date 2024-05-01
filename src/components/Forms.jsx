@@ -1,19 +1,20 @@
 import React from 'react'
+import { TbXboxX } from "react-icons/tb";
 
-
-const Section = () => {
+const Forms = () => {
   return (
-    <section className='container mt-[50px]'>
+    <section className='container'>
         <div className='flex items-center justify-center flex-col'>
             <div className='flex items-center'>
                 <h1 className='text-[#2D3663] text-[40px]'>Мутахассис кўригига ёзилиш</h1>
+                <TbXboxX className='w-[30px] h-[30px] text-[#2D3663]'/>
             </div>
             <div className='flex items-center justify-between mt-[30px] gap-[50px] w-full max-w-[950px]'>
                 <input type="text" placeholder='Исм' className='text-[#2D3663] w-full max-w-[950px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4'/>
                 <input type="text" placeholder='Фамиля' className='text-[#2D3663] w-full max-w-[950px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4'/>
             </div>
             <div className='flex items-center justify-between mt-[30px] gap-[50px] w-full max-w-[950px]'>
-                <input type="number" placeholder='Телефон' className='text-[#2D3663] w-full max-w-[950px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4'/>
+                <input type="text" placeholder='Телефон' className='text-[#2D3663] w-full max-w-[950px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4'/>
                 <input type="date" placeholder='Фамиля' className='text-[#2D3663] w-full max-w-[950px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4 pr-4'/>
             </div>
             <div className='mt-[30px] gap-[50px] w-full max-w-[950px]'>
@@ -31,4 +32,4 @@ const Section = () => {
   )
 }
 
-export default Section
+export default Forms
