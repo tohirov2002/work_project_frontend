@@ -18,14 +18,14 @@ const Section1 = () => {
     <section className='mt-[20px]'>
         <div className='article_image1'>
             <div className='flex items-center justify-center bg-[#00000050]'>
-                <h1 className='text-center text-white font-bold text-[28px] max-w-[1200px] p-[30px]'>Туркиянинг икки энг яхши онкологи профессор Гуркан Теллиоғлу ва профессор Барбарос Чил 6 ва 7 октябр кунлари Соғлом Ҳаёт килиникамизга бепул консултатсиялар ўтказади.</h1>
+                <h1 className='text-center text-white font-bold text-[28px] max-w-[1200px] p-[30px] doctors_title articles1_title'>Туркиянинг икки энг яхши онкологи профессор Гуркан Теллиоғлу ва профессор Барбарос Чил 6 ва 7 октябр кунлари Соғлом Ҳаёт килиникамизга бепул консултатсиялар ўтказади.</h1>
             </div>
         </div>
         <div className='container'>
-            <div className='mt-[80px] flex justify-center'>
-                <div className='cursor-pointer'>
-                    <img className='max-w-[800px] h-[550px] rounded-md' src={turk} alt="turk" />
-                    <div className='mt-5 flex items-center justify-around'>
+            <div className='mt-[80px] flex justify-center about'>
+                <div className='cursor-pointer article'>
+                    <img className='max-w-[800px] h-[550px] rounded-md article_img' src={turk} alt="turk" />
+                    <div className='mt-5 flex items-center justify-around gap-3'>
                         <div className='flex items-center'>
                             <MdOutlinePersonOutline className='text-[#2D3663] w-[20px] h-[20px]'/>
                             <h1 className='text-[#878ca1] text-[16px] ml-2'>SoglomHayot tomonidan</h1>

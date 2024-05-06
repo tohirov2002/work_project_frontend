@@ -3,7 +3,7 @@ import { TbXboxX } from "react-icons/tb";
 
 const Forms = ({openModal,openFunk}) => {
   return (
-    <section className='container'>
+    // <section className='container'>
         <div className={openModal ? 'show1': 'info'}>
         <div className='flex items-center justify-center flex-col bg-white p-[50px] w-full max-w-[1100px] rounded-3xl'>
             <div className='absolute right-[30px] top-[20px]'>
@@ -32,7 +32,7 @@ const Forms = ({openModal,openFunk}) => {
     
         </div>
         </div>
-    </section>
+    // </section>
   )
 }
 

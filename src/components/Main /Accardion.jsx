@@ -19,7 +19,7 @@ const Accordion = () => {
     <div className='mt-[40px]'>
       <div>
         <div className='flex items-center justify-between'>
-          <h1 className='text-[20px] text-blue-950'>У вас есть педиатр?</h1>
+          <h1 className='text-[20px] text-blue-950 ac_text'>У вас есть педиатр?</h1>
           <div className='ml-5 w-[40px] h-[40px] bg-blue-950 rounded-[50%] flex items-center justify-center'>
             <button onClick={toggleOpen1} className={`text-white`}>{open1 ? <FaMinus /> : <FaPlus />}</button>
           </div>
@@ -30,7 +30,7 @@ const Accordion = () => {
       </div>
       <div className='mt-10'>
         <div className='flex items-center justify-between'>
-          <h1 className='text-[20px] text-blue-950'>Как мне записаться на прием в Akfa Medline?</h1>
+          <h1 className='text-[20px] text-blue-950 ac_text'>Как мне записаться на прием в Akfa Medline?</h1>
           <div className='ml-5 w-[40px] h-[40px] bg-blue-950 rounded-[50%] flex items-center justify-center'>
             <button onClick={toggleOpen2} className={`text-white`}>{open2 ? <FaMinus /> : <FaPlus />}</button>
           </div>
@@ -41,7 +41,7 @@ const Accordion = () => {
       </div>
       <div className='mt-10'>
         <div className='flex items-center justify-between'>
-          <h1 className='text-[20px] text-blue-950'>Предоставляет ли ваше место медицинскую страховку?</h1>
+          <h1 className='text-[20px] text-blue-950 ac_text'>Предоставляет ли ваше место медицинскую страховку?</h1>
           <div className='ml-5 w-[40px] h-[40px] bg-blue-950 rounded-[50%] flex items-center justify-center'>
             <button onClick={toggleOpen3} className={`text-white`}>{open3 ? <FaMinus /> : <FaPlus />}</button>
           </div>
@@ -53,7 +53,7 @@ const Accordion = () => {
       </div>
       <div className='mt-10'>
         <div className='flex items-center justify-between'>
-          <h1 className='text-[20px] text-blue-950'>Какие способы оплаты вы предоставляете?</h1>
+          <h1 className='text-[20px] text-blue-950 ac_text'>Какие способы оплаты вы предоставляете?</h1>
           <div className='ml-5 w-[40px] h-[40px] bg-blue-950 rounded-[50%] flex items-center justify-center'>
             <button onClick={toggleOpen4} className={`text-white`}>{open4 ? <FaMinus /> : <FaPlus />}</button>
           </div>

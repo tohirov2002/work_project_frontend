@@ -2,6 +2,7 @@ import {useState} from 'react'
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Logo from '../../assets/images/logo.png'
+import { GiHamburgerMenu } from "react-icons/gi";
 // import search from '../assets/images/search.svg'
 import LanguageDrop from '../LanguageDrop';
 
@@ -17,20 +18,22 @@ function Header() {
         <div className='flex items-center justify-between'>
         <ul className='flex items-center justify-betwen'>
             <li className='flex items-center'>
-                <NavLink to={'/'}><img className='w-[70px] h-[70px]' src={Logo} alt="logo" /></NavLink>
-                <NavLink to={'/'} className='text-[20px] text-center w-[20px] ml-3 text-blue-950 font-bold font-mono'>Sog'lom Hayot</NavLink>   
+                <NavLink to={'/'}><img className='logo_img w-[70px] h-[70px]' src={Logo} alt="logo" /></NavLink>
+                <NavLink to={'/'} >
+                  <h1 className='logo_title text-[20px] text-center w-[20px] ml-3 text-blue-950 font-bold font-mono'> Sog'lom Hayot</h1>
+                </NavLink>   
             </li>
-            <li className='ml-[150px]'>
-              <NavLink to={'/about'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer font-bold shadow-xl'>{ t("soz1") }</NavLink>
-              <NavLink to={'/services'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz2") }</NavLink>
-              <NavLink to={'/doctors'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz3") }</NavLink>
-              <NavLink to={'/Insurance'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz4") }</NavLink>
-              <NavLink to={'/Articles'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz5") }</NavLink>
-              <NavLink to={'/connections'} className='text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz6") }</NavLink>
+            <li className='ml-[150px] header_item'>
+              <NavLink to={'/about'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer font-bold shadow-xl'>{ t("soz1") }</NavLink>
+              <NavLink to={'/services'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz2") }</NavLink>
+              <NavLink to={'/doctors'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz3") }</NavLink>
+              <NavLink to={'/Insurance'} className='item text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz4") }</NavLink>
+              <NavLink to={'/Articles'} className='item text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz5") }</NavLink>
+              <NavLink to={'/connections'} className='item text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl'>{ t("soz6") }</NavLink>
             </li>
         </ul>
         <ul>
-        <li className='flex items-center gap-4'>
+        <li className='flex items-center gap-4 '>
                 <button onClick={toggleDarkMode}>
                     {darkMode ? (
                       <svg class="text-yellow-500 dark:text-white w-[30px] h-[30px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -43,6 +46,7 @@ function Header() {
                     )}
                 </button>
                 <LanguageDrop/>
+                <GiHamburgerMenu className='w-[25px] h-[25px] cursor-pointer text-blue-950 ham_btn ml-3'/>
             </li>
         </ul>
         </div>

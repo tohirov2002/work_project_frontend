@@ -24,8 +24,8 @@ const LanguageDrop = () => {
       </button>
       {isOpen && (
         <ul className="dropdown-menu cursor-pointer">
-          <li onClick={() => handleLanguaChange('eng')}>eng</li>
           <li onClick={() => handleLanguaChange('uz')}>uz</li>
+          <li onClick={() => handleLanguaChange('eng')}>eng</li>
           <li onClick={() => handleLanguaChange('ru')}>ru</li>
         </ul>
       )}

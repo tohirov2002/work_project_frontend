@@ -11,6 +11,7 @@ import Connections from '../Pages/Connection/Connection'
 import Doctors from '../Shifokorlar/Doctors'
 import Doctor from '../Shifokorlar/Doctor'
 import Section1 from '../Pages/Articles/Section1'
+import Sections from '../Sections/Sections'
 
 
 
@@ -29,6 +30,7 @@ const Router = () => {
                 <Route path='/doctors' element={<Doctors/>}/>
                 <Route path='/doctor' element={<Doctor/>}/>
                 <Route path='/maqola' element={<Section1/>}/>
+                <Route path='/sections' element={<Sections/>}/>
             </Routes>
         </Layout>
     </div>

@@ -10,11 +10,11 @@ const Doctor = () => {
     <section>
       <div className='mt-[20px]'>
         <div className='doctor_image'>
-            <h1 className='text-center text-white font-bold bg-[#0000004a] h-[200px]  text-[46px] pt-[50px]'>Ёкубов Бобуржон Алишерович</h1>
+            <h1 className='text-center text-white font-bold bg-[#0000004a] h-[200px]  text-[46px] pt-[50px] doctors_title'>Ёкубов Бобуржон Алишерович</h1>
         </div>
       </div>
-      <div className="container mt-[100px] flex justify-around">
-        <div><img className='max-w-[200px] h-[200px] rounded-xl' src={alisher1} alt="alisher" /></div>
+      <div className="container mt-[100px] flex justify-around doctor_container about">
+        <div><img className='max-w-[200px] h-[200px] rounded-xl doctor_images1' src={alisher1} alt="alisher" /></div>
         <div>
           <p className='text-[#5c6177] text-[18px]'>Кардиолог. Кардиореаниматолог.</p>
           <h1 className='text-[#2D3663] font-bold text-[28px] mt-8'>Мутахассислиги:</h1>
@@ -30,7 +30,7 @@ const Doctor = () => {
         </div>
       </div>
       <div className="container">
-        <div className='flex items-center gap-2 mt-[80px] ml-[120px]'>
+        <div className='flex items-center doctor_connection gap-2 mt-[80px] ml-[120px]'>
           <FaFacebook className='cursor-pointer w-[35px] h-[35px] text-blue-600'/>
           <FaWhatsappSquare className='cursor-pointer w-[35px] h-[35px] text-green-600'/>
           <FaTelegram className='cursor-pointer w-[35px] h-[35px] text-blue-600'/>

@@ -6,12 +6,12 @@ import { FaTelegram } from "react-icons/fa";
 const Section3 = () => {
   return (
     <>
-        <section className='images mt-[100px] p-[80px]'>
+        <section className='images mt-[100px] p-[80px] times_div'>
             <div className='container'>
-                <div className='ml-[600px]'>
-                    <div className='bg-[#043C7C] max-w-[800px] p-[50px] rounded-xl'>
+                <div className='ml-[600px] times'>
+                    <div className='bg-[#043C7C] max-w-[800px] p-[50px] rounded-xl times1'>
                         <h1 className='text-white text-[18px]'>ISH VAQTI</h1>
-                        <h1 className='text-white text-[40px] mt-3'>Sog'lom Hayot Kilinikasi</h1>
+                        <h1 className='text-white text-[40px] mt-3 times_title'>Sog'lom Hayot Kilinikasi</h1>
                         <p className='text-white text-[16px] mt-2'>ko'p tarmoqli klinika</p>
                         <div className='border-b-2 text-white text-[16px] mt-9 flex items-center justify-between border-[#424794]'>
                             <p className='mb-5'>Dushanba,juma: </p>
@@ -25,11 +25,11 @@ const Section3 = () => {
                             <p className='mb-5'>Yakshanba: </p>
                             <p className='mb-5'>Выходной</p>
                         </div>
-                        <div className='border-b-2 text-white text-[16px] mt-9 flex items-center justify-between border-[#424794]'>
+                        <div className='border-b-2 text-white text-[16px] mt-9 flex items-center justify-between border-[#424794] ultra'>
                             <p className='mb-5'>navbatchi: ultratovush, terapevt, jarroh, KBB </p>
                             <p className='mb-5'>17:00 - 20:00</p>
                         </div>
-                        <div className='border-b-2 text-white text-[16px] mt-9 flex items-center justify-between border-[#424794]'>
+                        <div className='border-b-2 text-white text-[16px] mt-9 flex items-center justify-between border-[#424794] ultra'>
                             <p className='mb-5'>laboratoriya, radiologiya, qo'ng'iroqlar markazi </p>
                             <p className='mb-5'>24/7</p>
                         </div>
@@ -38,15 +38,15 @@ const Section3 = () => {
                 </div>
             </div>
         </section>
-        <section className='container flex justify-around mt-[100px]'>
-            <div>
-                <h1 className='text-blue-950 font-bold text-[22px] mt-[100px]'>Соғлом ҳаёт килиника</h1>
+        <section className='container flex justify-around mt-[100px] admin_time'>
+            <div className='admin_time'>
+                <h1 className='text-blue-950 font-bold text-[22px] mt-[100px] sg_title'>Соғлом ҳаёт килиника</h1>
                 <p className='text-blue-950 font-bold text-[26px] mt-5'>24/7</p>
                 <p className='text-[#534b4b]  text-[16px] max-w-[500px] mt-7'>ЮКОРИ СИФАТЛИ МУТАХСИЗЛАР ҲАР ҚАНДАЙ ВАҚТДА СИЗГА ЁРДАМ БЕРИШГА ТАЙЁР.</p>
                 <p className='text-[#534b4b]  text-[18px] max-w-[500px] mt-7'>Биз доимо сиз ҳақингизда қайғурамиз</p>              
                 <p className='text-blue-950  text-[24px] max-w-[500px] mt-7'>Боғланиш</p>
                 <div className=' flex items-center justify-between'>
-                <div className='flex items-center gap-5 mt-[40px]'>
+                <div className='flex items-center gap-5 mt-[40px] phone_tg'>
                     <div>
                     <FaPhoneVolume className='w-[30px] h-[30px] text-blue-950'/>
                     </div>
@@ -55,7 +55,7 @@ const Section3 = () => {
                         <p className='text-[#534b4b]  text-[16px] mt-1'>+998 98 555 66 66</p>
                     </div>
                 </div>
-                <div className='flex items-center gap-5 mt-[40px] mr-[50px]'>
+                <div className='flex items-center gap-5 mt-[40px] mr-[50px] ml-[40px] phone_tg'>
                     <div>
                     <FaTelegram className='w-[30px] h-[30px] text-blue-950'/>
                     </div>
@@ -66,8 +66,8 @@ const Section3 = () => {
                 </div>
                 </div>
             </div>
-            <div>
-                <img className='hover:shadow-2xl max-w-[600px] h-[600px]' src={admin} alt="admin" />
+            <div className='admin_logo'>
+                <img className='hover:shadow-2xl max-w-[600px] h-[600px] mri_logo' src={admin} alt="admin" />
             </div>
         </section>
     </>
