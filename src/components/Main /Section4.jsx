@@ -5,8 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../../assets/main.css';
-// import required modules
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 import bemor1 from '../../assets/images/bemor.jpg'
 import bemor2 from '../../assets/images/bemor2.jpg'
@@ -18,13 +17,22 @@ import Accordion from './Accardion';
 const Section4 = () => {
   return (
     <>
-        <section className='container mt-[100px]'>
+        <section className='dark:bg-black container mt-[100px]'>
             <div className='flex flex-col items-center justify-center text-center'>
                 <h1 className='text-[24px] text-slate-700 font-bold'>Шарҳлар</h1>
                 <p className='text-[40px] text-blue-950 '>Беморларимиздан шарҳлар</p>
             </div>
             <div className='mt-[80px] siwipers'>
-                <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                <Swiper 
+                    navigation={true} 
+                    className="mySwiper"
+                    loop={true} 
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
+                    modules={[Navigation, Autoplay]} 
+                    >
                     <SwiperSlide>
                         <div className='flex items-center justify-around comments'>
                             <div className='ml-[60px] comment_title'>

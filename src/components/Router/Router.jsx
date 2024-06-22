@@ -2,7 +2,6 @@ import React from 'react'
 import {Routes, Route } from 'react-router-dom'
 import About from '../Pages/About/About'
 import Main from '../Main /Main'
-import Layout from '../Layout/Index'
 import Services from '../Pages/Services/Services'
 import Departaments from '../Pages/Departaments/Departaments'
 import Insurance from '../Pages/Insurance/Insurance'
@@ -12,13 +11,17 @@ import Doctors from '../Shifokorlar/Doctors'
 import Doctor from '../Shifokorlar/Doctor'
 import Section1 from '../Pages/Articles/Section1'
 import Sections from '../Sections/Sections'
+import AdminPanel from '../Pages/AdminPanel'
+import AdDbForms from '../AddForms/Departaments/Departament'
+import AdDoctor from '../AddForms/Doctors/Doctor'
+import AdComment from '../AddForms/Comments/Comment'
+import AddNews from '../AddForms/News/News'
 
 
 
 const Router = () => {
   return (
     <div>
-        <Layout>
             <Routes>
                 <Route path='/' element={<Main/>}/>
                 <Route path='/about' element={<About/>}/>
@@ -31,8 +34,13 @@ const Router = () => {
                 <Route path='/doctor' element={<Doctor/>}/>
                 <Route path='/maqola' element={<Section1/>}/>
                 <Route path='/sections' element={<Sections/>}/>
+                <Route path='/admin' element={<AdminPanel/>}>
+                  <Route path='addforms' element={<AdDbForms/>}/>
+                  <Route path='doctor' element={<AdDoctor/>}/>
+                  <Route path='comment' element={<AdComment/>}/>
+                  <Route path='news' element={<AddNews/>}/>
+                </Route>
             </Routes>
-        </Layout>
     </div>
   )
 }

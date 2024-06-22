@@ -1,11 +1,13 @@
 import React from 'react'
 import Alisher from '../../assets/images/alisher.jpg'
 import { NavLink } from 'react-router-dom'
+import Layout from '../Layout/Index'
 
 
 const Doctors = () => {
   return (
     <>
+    <Layout>
       <section>
       <div className='mt-[20px]'>
         <div className='doctors_images'>
@@ -55,6 +57,7 @@ const Doctors = () => {
           </ul>
         </div>
       </section>
+    </Layout>
     </>
   )
 }
