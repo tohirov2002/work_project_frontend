@@ -3,23 +3,56 @@ import axios from 'axios'
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 import AddComments from './AddComments';
+import { Link, useParams } from 'react-router-dom';
+import UpdateComments from './UpdateComments';
 
 const AdComment = () => {
 
   const [data, setData] = useState([])
   const [showModal, setModal] = useState(false)
+  const [showMore, setShowMore] = useState(false)
+  const [rendir, setRendir] = useState(true )
+  const [editComment, setEditComment] = useState(null)
+
+
+  console.log(editComment);
+
+
+
+  let params = useParams();
 
   showModal ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto"
   const handleShow = () => {
     setModal(!showModal)
   }
 
+  const handleShowMore = () => {
+    setShowMore(!showMore)
+  }
   const handleData = async () => {
     try {
       const response = await axios.get('http://127.0.0.1:8000/api/comments/')
       setData(response.data)
+      setRendir(prev => !prev);
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  const deleteData = async (id) => {
+    try {
+      const response = await axios.delete(`http://127.0.0.1:8000/api/comments/${id}/`);
+      console.log('Data deleted successfully:', response.data);
+      setData(data.filter(item => item.id !== id));
+    } catch (error) {
+      console.error('Error deleting data:', error);
+    }
+  }
+
+  const handleDelete = (id) => {
+    const confirmed = window.confirm("Haqiqatdan ham ushbu kommentni o'chirmoqchimisiz?");
+    if (confirmed) {
+      deleteData(id);
     }
   }
 
@@ -63,10 +96,12 @@ const AdComment = () => {
                       </td>
                       <td className="px-6 py-4">
                         <div className='flex items-center gap-5'>
-                          <div className='cursor-pointer bg-blue-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
-                            <HiOutlinePencilAlt className='text-white w-[25px] h-[25px]' />
-                          </div>
-                          <div className='cursor-pointer bg-red-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
+                          {/* <Link to={`/update/${item.id}`}> */}
+                            <div onClick={() => {setEditComment(item), handleShowMore()}} className='cursor-pointer bg-blue-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
+                              <HiOutlinePencilAlt className='text-white w-[25px] h-[25px]' />
+                            </div>
+                          {/* </Link> */}
+                          <div onClick={() => handleDelete(item.id)} className='cursor-pointer bg-red-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
                             <MdDelete className='text-white w-[25px] h-[25px]' />
                           </div>
                         </div>
@@ -79,9 +114,10 @@ const AdComment = () => {
           </div>
         </div>
       </section>
-      <AddComments showModal={showModal} handleShow={handleShow} />
+      <UpdateComments handleDataUpdate={handleData} showMore={showMore} handleShowMore={handleShowMore} editComment={editComment}/>
+      <AddComments handleData={handleData} showModal={showModal} handleShow={handleShow} />
     </>
   )
 }
 
-export default AdComment
+export default AdComment;

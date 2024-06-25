@@ -16,6 +16,7 @@ import AdDbForms from '../AddForms/Departaments/Departament'
 import AdDoctor from '../AddForms/Doctors/Doctor'
 import AdComment from '../AddForms/Comments/Comment'
 import AddNews from '../AddForms/News/News'
+import UpdateComments from '../AddForms/Comments/UpdateComments'
 
 
 
@@ -40,6 +41,7 @@ const Router = () => {
                   <Route path='comment' element={<AdComment/>}/>
                   <Route path='news' element={<AddNews/>}/>
                 </Route>
+                <Route path='update/:id' element={<UpdateComments/>}/>
             </Routes>
     </div>
   )

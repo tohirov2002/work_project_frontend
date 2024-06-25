@@ -2,24 +2,30 @@ import React, { useEffect, useState } from 'react';
 import MyInput from '../MyInput';
 import axios from 'axios';
 
-const AddComments = ({ showModal, handleShow }) => {
+const AddComments = ({ showModal, handleShow , handleData}) => {
 
   // data feach
   const [data, setData] = useState([])
-  console.log(data);
 
-  const handleData = async () => {
-    try {
-      const response = await axios.get('http://127.0.0.1:8000/api/comments/')
-      setData(response.data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
+ 
 
   useEffect(() => {
+    const handleData = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/comments/')
+        setData(response.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
     handleData()
   }, [])
+
+
+
+
+
+ 
 
   // data create
   const [contentInp, setContentInp] = useState("");
@@ -43,6 +49,7 @@ const AddComments = ({ showModal, handleShow }) => {
       })
       .then(function (response) {
         console.log("Response:", response);
+        handleData()
       })
       .catch(function (error) {
         if (error.response) {

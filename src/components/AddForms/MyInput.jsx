@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MyInput = ({ myValue, mySetValueChange, myplace }) => {
-
+  console.log(myValue);
   const inputValueChange = (e)=> {
     mySetValueChange(e.target.value)
   }
