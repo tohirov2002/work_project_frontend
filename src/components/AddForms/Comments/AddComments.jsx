@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import MyInput from '../MyInput';
 import axios from 'axios';
+import { ImCross } from "react-icons/im";
+
 
 const AddComments = ({ showModal, handleShow , handleData}) => {
 
@@ -49,7 +51,10 @@ const AddComments = ({ showModal, handleShow , handleData}) => {
       })
       .then(function (response) {
         console.log("Response:", response);
-        handleData()
+        handleData();
+        setContentInp("");
+        setDescriptionRu("");
+        setImageInp(null);
       })
       .catch(function (error) {
         if (error.response) {
@@ -73,6 +78,9 @@ const AddComments = ({ showModal, handleShow , handleData}) => {
     <div className={showModal? 'column': 'info'}>
       <div className='columns'>
         <div className='container w-[800px] p-[50px] mt-[200px] bg-white rounded-xl flex items-center justify-center flex-col'>
+        <div className='bg-blue-500 w-[30px] cursor-pointer h-[30px] rounded-[50%] flex items-center justify-center'>
+            <ImCross onClick={handleShow} className='text-white'/>
+        </div>
         <h1 className='text-[#2D3663] text-[40px] '>Sharx qo'shish</h1>
         <form onSubmit={onCreate}>
           <MyInput myValue={contentInp} mySetValueChange={setContentInp} myplace='description' type='text'/>

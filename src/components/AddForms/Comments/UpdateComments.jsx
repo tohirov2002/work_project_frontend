@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import MyInput from '../MyInput';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { ImCross } from "react-icons/im";
+
 
 const UpdateComments = ({editComment, showMore, handleShowMore, handleDataUpdate}) => {
   const [data, setData] = useState([]);
@@ -91,6 +93,9 @@ console.log(updatedComment);
     <div className={showMore? 'more': 'info'}>
       <div className='columns'>
         <div className='container w-[800px] p-[50px] mt-[200px] bg-white rounded-xl flex items-center justify-center flex-col'>
+        <div onClick={handleShowMore} className='bg-blue-500 w-[30px] cursor-pointer h-[30px] rounded-[50%] flex items-center justify-center'>
+            <ImCross  className='text-white'/>
+          </div>
           <h1 className='text-[#2D3663] text-[40px] '>Sharx o'zgartirish</h1>
           <form onSubmit={onCreate}>
             <MyInput myValue={content} mySetValueChange={setContent} myplace='description' type='text' />

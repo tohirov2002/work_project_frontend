@@ -12,11 +12,11 @@ import Doctor from '../Shifokorlar/Doctor'
 import Section1 from '../Pages/Articles/Section1'
 import Sections from '../Sections/Sections'
 import AdminPanel from '../Pages/AdminPanel'
-import AdDbForms from '../AddForms/Departaments/Departament'
 import AdDoctor from '../AddForms/Doctors/Doctor'
 import AdComment from '../AddForms/Comments/Comment'
 import AddNews from '../AddForms/News/News'
 import UpdateComments from '../AddForms/Comments/UpdateComments'
+import Departament from '../AddForms/Departaments/Departament'
 
 
 
@@ -36,7 +36,7 @@ const Router = () => {
                 <Route path='/maqola' element={<Section1/>}/>
                 <Route path='/sections' element={<Sections/>}/>
                 <Route path='/admin' element={<AdminPanel/>}>
-                  <Route path='addforms' element={<AdDbForms/>}/>
+                  <Route path='addforms' element={<Departament/>}/>
                   <Route path='doctor' element={<AdDoctor/>}/>
                   <Route path='comment' element={<AdComment/>}/>
                   <Route path='news' element={<AddNews/>}/>

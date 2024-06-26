@@ -53,7 +53,7 @@ const AdminPanel = () => {
               <h1 className='text-white text-[18px]'>Yangiliklar</h1>
             </div>
           </NavLink>
-          <div className='flex items-center gap-2 pt-5'>
+          <div className='flex items-center gap-2 pt-5 cursor-pointer'>
             <BsArrowLeftSquareFill className='text-white w-[15px] h-[15px]' />
             <h1 className='text-white text-[18px]'>chiqish</h1>
           </div>

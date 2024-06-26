@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 import AddComments from './AddComments';
@@ -7,35 +7,34 @@ import { Link, useParams } from 'react-router-dom';
 import UpdateComments from './UpdateComments';
 
 const AdComment = () => {
-
-  const [data, setData] = useState([])
-  const [showModal, setModal] = useState(false)
-  const [showMore, setShowMore] = useState(false)
-  const [rendir, setRendir] = useState(true )
-  const [editComment, setEditComment] = useState(null)
-
+  const [data, setData] = useState([]);
+  const [showModal, setModal] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const [rendir, setRendir] = useState(true);
+  const [editComment, setEditComment] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   console.log(editComment);
 
-
-
   let params = useParams();
 
-  showModal ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto"
+  showModal ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+  
   const handleShow = () => {
-    setModal(!showModal)
+    setModal(!showModal);
   }
 
   const handleShowMore = () => {
-    setShowMore(!showMore)
+    setShowMore(!showMore);
   }
+
   const handleData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/comments/')
-      setData(response.data)
+      const response = await axios.get('http://127.0.0.1:8000/api/comments/');
+      setData(response.data);
       setRendir(prev => !prev);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -56,17 +55,36 @@ const AdComment = () => {
     }
   }
 
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  }
+
   useEffect(() => {
-    handleData()
-  }, [])
+    handleData();
+  }, []);
+
+  const filteredData = data.filter(item =>
+    item.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
-      <section className=' ml-[400px] container pt-10 bg-blue-50 '>
-        <div className='text-blue-950 text-[40px] text-center '>Comments</div>
+      <section className='ml-[400px] container pt-10 bg-blue-50'>
+        <div className='text-blue-950 text-[40px] text-center'>Comments</div>
         <div className='flex items-center justify-between'>
-          <input type="text" placeholder='Search Comments' className='text-[#2D3663] mt-8 w-[750px] bg-white rounded-xl pt-3 pb-3 pl-4' />
-          <button onClick={handleShow} className='cursor-pointer ml-[330px] flex items-center justify-center gap-3 text-white rounded-xl w-[200px] pt-3 pb-3 mt-[30px] bg-blue-600 hover:bg-slate-500'>Add Comments</button>
+          <input 
+            type="text" 
+            placeholder='Search Comments' 
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className='text-[#2D3663] mt-8 w-[750px] bg-white rounded-xl pt-3 pb-3 pl-4' 
+          />
+          <button 
+            onClick={handleShow} 
+            className='cursor-pointer ml-[330px] flex items-center justify-center gap-3 text-white rounded-xl w-[200px] pt-3 pb-3 mt-[30px] bg-blue-600 hover:bg-slate-500'
+          >
+            Add Comments
+          </button>
         </div>
         <div className='mt-10 rounded-3-xl'>
           <div className="relative overflow-x-auto rounded-xl">
@@ -86,7 +104,7 @@ const AdComment = () => {
               </thead>
               <tbody>
                 {
-                  data.map((item) => (
+                  filteredData.map((item) => (
                     <tr key={item.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                       <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <img className='w-[150px] h-[150px]' src={item.image} alt="" />
@@ -96,11 +114,9 @@ const AdComment = () => {
                       </td>
                       <td className="px-6 py-4">
                         <div className='flex items-center gap-5'>
-                          {/* <Link to={`/update/${item.id}`}> */}
-                            <div onClick={() => {setEditComment(item), handleShowMore()}} className='cursor-pointer bg-blue-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
-                              <HiOutlinePencilAlt className='text-white w-[25px] h-[25px]' />
-                            </div>
-                          {/* </Link> */}
+                          <div onClick={() => {setEditComment(item); handleShowMore()}} className='cursor-pointer bg-blue-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
+                            <HiOutlinePencilAlt className='text-white w-[25px] h-[25px]' />
+                          </div>
                           <div onClick={() => handleDelete(item.id)} className='cursor-pointer bg-red-600 w-[45px] h-[45px] flex items-center justify-center rounded-xl'>
                             <MdDelete className='text-white w-[25px] h-[25px]' />
                           </div>
@@ -114,10 +130,10 @@ const AdComment = () => {
           </div>
         </div>
       </section>
-      <UpdateComments handleDataUpdate={handleData} showMore={showMore} handleShowMore={handleShowMore} editComment={editComment}/>
+      <UpdateComments handleDataUpdate={handleData} showMore={showMore} handleShowMore={handleShowMore} editComment={editComment} />
       <AddComments handleData={handleData} showModal={showModal} handleShow={handleShow} />
     </>
-  )
+  );
 }
 
 export default AdComment;
