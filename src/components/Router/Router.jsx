@@ -17,6 +17,7 @@ import AdComment from '../AddForms/Comments/Comment'
 import AddNews from '../AddForms/News/News'
 import UpdateComments from '../AddForms/Comments/UpdateComments'
 import Departament from '../AddForms/Departaments/Departament'
+import DoctorCategory from '../AddForms/DoctorCategories/DoctorCategory'
 
 
 
@@ -40,6 +41,7 @@ const Router = () => {
                   <Route path='doctor' element={<AdDoctor/>}/>
                   <Route path='comment' element={<AdComment/>}/>
                   <Route path='news' element={<AddNews/>}/>
+                  <Route path='category' element={<DoctorCategory/>}/>
                 </Route>
                 <Route path='update/:id' element={<UpdateComments/>}/>
             </Routes>

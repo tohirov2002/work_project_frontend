@@ -7,6 +7,7 @@ import Logo from '../../assets/images/logo.png'
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaCommentDots } from "react-icons/fa";
 import { FaNewspaper } from "react-icons/fa6";
+import { TbCategoryPlus } from "react-icons/tb";
 
 
 const AdminPanel = () => {
@@ -51,6 +52,12 @@ const AdminPanel = () => {
             <div className='flex items-center gap-2 pt-5 cursor-pointer'>
               <FaNewspaper className='text-white w-[20px] h-[20px]' />
               <h1 className='text-white text-[18px]'>Yangiliklar</h1>
+            </div>
+          </NavLink>
+          <NavLink to={'category'}>
+            <div className='flex items-center gap-2 pt-5 cursor-pointer'>
+              <TbCategoryPlus className='text-white w-[20px] h-[20px]' />
+              <h1 className='text-white text-[18px]'>Category</h1>
             </div>
           </NavLink>
           <div className='flex items-center gap-2 pt-5 cursor-pointer'>

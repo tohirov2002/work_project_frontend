@@ -4,60 +4,68 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { ImCross } from "react-icons/im";
 
-const UpdateNews = ({ editComment, showMore, handleShowMore, handleDataUpdate }) => {
+const UpdateNews = ({ editDoctor, showMore, handleShowMore, handleDataUpdate }) => {
   const [data, setData] = useState([]);
-  const [title_uz, setTitleUz] = useState("");
-  const [title_ru, setTitleRU] = useState("");
-  const [content_uz, setContentUZ] = useState("");
-  const [content_ru, setContentRu] = useState("");
-  const [description_uz, setDescriptionUz] = useState("");
-  const [description_ru, setDescriptionRu] = useState("");
-  const [advice1_uz, setAdvice1Uz] = useState("");
-  const [advice1_ru, setAdvice1Ru] = useState("");
-  const [advice2_uz, setAdvice2Uz] = useState("");
-  const [advice2_ru, setAdvice2Ru] = useState("");
-  const [advice3_uz, setAdvice3Uz] = useState("");
-  const [advice3_ru, setAdvice3Ru] = useState("");
-  const [ImageEditInp, setEditImageInp] = useState(null);
+  const [name, setName] = useState("");
+  const [specialty_uz, setSpecialtyUz] = useState("");
+  const [specialty_ru, setSpecialtyRu] = useState("");
+  const [education, setEducation] = useState("");
+  const [experience1_uz, setExperience1Uz] = useState("");
+  const [experience1_ru, setExperience1Ru] = useState("");
+  const [experience2_uz, setExperience2Uz] = useState("");
+  const [experience2_ru, setExperience2Ru] = useState("");
+  const [experience3_uz, setExperience3Uz] = useState("");
+  const [experience3_ru, setExperience3Ru] = useState("");
+  const [experience4_uz, setExperience4Uz] = useState("");
+  const [experience4_ru, setExperience4Ru] = useState("");
+  const [imageInp, setImageInp] = useState(null);
+  const [vedioUrl, setVedioUrl] = useState("");
+  const [category_name, setCategory] = useState("");
+  const [categories, setCategories] = useState([]);
 
   const params = useParams();
 
   useEffect(() => {
-    if (editComment) {
-      setTitleUz(editComment.title_uz);
-      setTitleRU(editComment.title_ru);
-      setContentUZ(editComment.content_uz);
-      setContentRu(editComment.content_ru);
-      setDescriptionUz(editComment.description_uz);
-      setDescriptionRu(editComment.description_ru);
-      setAdvice1Uz(editComment.advice1_uz);
-      setAdvice1Ru(editComment.advice1_ru);
-      setAdvice2Uz(editComment.advice2_uz);
-      setAdvice2Ru(editComment.advice2_ru);
-      setAdvice3Uz(editComment.advice3_uz);
-      setAdvice3Ru(editComment.advice3_ru);
+    if (editDoctor) {
+      setName(editDoctor.name);
+      setSpecialtyUz(editDoctor.specialty_uz);
+      setSpecialtyRu(editDoctor.specialty_ru);
+      setEducation(editDoctor.education);
+      setExperience1Uz(editDoctor.experience1_uz);
+      setExperience1Ru(editDoctor.experience1_ru);
+      setExperience2Uz(editDoctor.experience2_uz);
+      setExperience2Ru(editDoctor.experience2_ru);
+      setExperience3Uz(editDoctor.experience3_uz);
+      setExperience3Ru(editDoctor.experience3_ru);
+      setExperience4Uz(editDoctor.experience4_uz);
+      setExperience4Ru(editDoctor.experience4_ru);
+      setImageInp(editDoctor.image);
+      setVedioUrl(editDoctor.vedio);
+      setCategory(editDoctor.category_name); 
     }
-  }, [editComment]);
+  }, [editDoctor]);
 
   const updatedComment = {
-    title_uz,
-    title_ru,
-    content_uz,
-    content_ru,
-    description_uz,
-    description_ru,
-    advice1_uz,
-    advice1_ru,
-    advice2_uz,
-    advice2_ru,
-    advice3_uz,
-    advice3_ru,
-    image: ImageEditInp,
+    name,
+    specialty_uz,
+    specialty_ru,
+    education,
+    experience1_uz,
+    experience1_ru,
+    experience2_uz,
+    experience2_ru,
+    experience3_uz,
+    experience3_ru,
+    experience4_uz,
+    experience4_ru,
+    image: imageInp,
+    vedio: vedioUrl,
+    category_name, 
   };
 
   const handleData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/news/');
+      const response = await axios.get('http://127.0.0.1:8000/api/doctor/');
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -66,31 +74,61 @@ const UpdateNews = ({ editComment, showMore, handleShowMore, handleDataUpdate })
 
   useEffect(() => {
     handleData();
-    axios
-      .get(`http://127.0.0.1:8000/api/news/${params.id}/`)
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/doctor/category/');
+        setCategories(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchCategories();
+    if (params.id){
+      axios
+      .get(`http://127.0.0.1:8000/api/doctor/${params.id}/`)
       .then((response) => {
-        setTitleUz(response.data.title_uz);
-        setTitleRU(response.data.title_ru);
-        setContentUZ(response.data.content_uz);
-        setContentRu(response.data.content_ru);
-        setDescriptionUz(response.data.description_uz);
-        setDescriptionRu(response.data.description_ru);
-        setAdvice1Uz(response.data.advice1_uz);
-        setAdvice1Ru(response.data.advice1_ru);
-        setAdvice2Uz(response.data.advice2_uz);
-        setAdvice2Ru(response.data.advice2_ru);
-        setAdvice3Uz(response.data.advice3_uz);
-        setAdvice3Ru(response.data.advice3_ru);
-        setEditImageInp(response.data.image);
+        setName(response.data.name);
+        setSpecialtyUz(response.data.specialty_uz);
+        setSpecialtyRu(response.data.specialty_ru);
+        setEducation(response.data.education);
+        setExperience1Uz(response.data.experience1_uz);
+        setExperience1Ru(response.data.experience1_ru);
+        setExperience2Uz(response.data.experience2_uz);
+        setExperience2Ru(response.data.experience2_ru);
+        setExperience3Uz(response.data.experience3_uz);
+        setExperience3Ru(response.data.experience3_ru);
+        setExperience4Uz(response.data.experience4_uz);
+        setExperience4Ru(response.data.experience4_ru);
+        setImageInp(response.data.image);
+        setVedioUrl(response.data.vedio);
+        setCategory(response.data.category_name); 
       })
       .catch((error) => {
         console.log(error);
       });
+    }
   }, [params.id]);
 
   const onCreate = (e) => {
     e.preventDefault();
-    axios.put(`http://127.0.0.1:8000/api/news/${editComment.id}/`, updatedComment, {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('specialty_uz', specialty_uz);
+    formData.append('specialty_ru', specialty_ru);
+    formData.append('education', education);
+    formData.append('experience1_uz', experience1_uz);
+    formData.append('experience1_ru', experience1_ru);
+    formData.append('experience2_uz', experience2_uz);
+    formData.append('experience2_ru', experience2_ru);
+    formData.append('experience3_uz', experience3_uz);
+    formData.append('experience3_ru', experience3_ru);
+    formData.append('experience4_uz', experience4_uz);
+    formData.append('experience4_ru', experience4_ru);
+    formData.append('image', imageInp);
+    formData.append('vedio', vedioUrl);
+    formData.append('category_name', category_name);
+
+    axios.put(`http://127.0.0.1:8000/api/doctor/${editDoctor.id}/`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -105,31 +143,42 @@ const UpdateNews = ({ editComment, showMore, handleShowMore, handleDataUpdate })
   };
 
   const handleFileChange = (e) => {
-    setEditImageInp(e.target.files[0]);
+    setImageInp(e.target.files[0]);
   };
 
   return (
-    <div className={showMore? 'more': 'info'}>
+    <div className={showMore ? 'more' : 'info'}>
       <div className='columns h-[100vh] overflow-auto'>
         <div className='container w-[800px] p-[50px] mt-[100px] bg-white rounded-xl flex items-center justify-center flex-col'>
           <div onClick={handleShowMore} className='bg-blue-500 w-[30px] cursor-pointer h-[30px] rounded-[50%] flex items-center justify-center'>
-            <ImCross  className='text-white'/>
+            <ImCross className='text-white' />
           </div>
-          <h1 className='text-[#2D3663] text-[40px]'>Sharx o'zgartirish</h1>
+          <h1 className='text-[#2D3663] text-[40px]'>Shifokor o'zgartirish</h1>
           <form onSubmit={onCreate}>
-            <MyInput myValue={title_uz} mySetValueChange={setTitleUz} myplace='title_uz' />
-            <MyInput myValue={title_ru} mySetValueChange={setTitleRU} myplace='title_ru' />
+            <MyInput myValue={name} mySetValueChange={setName} myplace='name' />
             <input className='text-[#2D3663] mt-8 w-[550px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4' type="file" onChange={handleFileChange} />
-            <MyInput myValue={content_uz} mySetValueChange={setContentUZ} myplace='content_uz' />
-            <MyInput myValue={content_ru} mySetValueChange={setContentRu} myplace='content_ru' />
-            <MyInput myValue={description_uz} mySetValueChange={setDescriptionUz} myplace='description_uz' />
-            <MyInput myValue={description_ru} mySetValueChange={setDescriptionRu} myplace='description_ru' />
-            <MyInput myValue={advice1_uz} mySetValueChange={setAdvice1Uz} myplace='advice1_uz' />
-            <MyInput myValue={advice1_ru} mySetValueChange={setAdvice1Ru} myplace='advice1_ru' />
-            <MyInput myValue={advice2_uz} mySetValueChange={setAdvice2Uz} myplace='advice2_uz' />
-            <MyInput myValue={advice2_ru} mySetValueChange={setAdvice2Ru} myplace='advice2_ru' />
-            <MyInput myValue={advice3_uz} mySetValueChange={setAdvice3Uz} myplace='advice3_uz' />
-            <MyInput myValue={advice3_ru} mySetValueChange={setAdvice3Ru} myplace='advice3_ru' />
+            <MyInput myValue={specialty_uz} mySetValueChange={setSpecialtyUz} myplace='specialty_uz' />
+            <MyInput myValue={specialty_ru} mySetValueChange={setSpecialtyRu} myplace='specialty_ru' />
+            <MyInput myValue={education} mySetValueChange={setEducation} myplace='education' />
+            <MyInput myValue={experience1_uz} mySetValueChange={setExperience1Uz} myplace='experience1_uz' />
+            <MyInput myValue={experience1_ru} mySetValueChange={setExperience1Ru} myplace='experience1_ru' />
+            <MyInput myValue={experience2_uz} mySetValueChange={setExperience2Uz} myplace='experience2_uz' />
+            <MyInput myValue={experience2_ru} mySetValueChange={setExperience2Ru} myplace='experience2_ru' />
+            <MyInput myValue={experience3_uz} mySetValueChange={setExperience3Uz} myplace='experience3_uz' />
+            <MyInput myValue={experience3_ru} mySetValueChange={setExperience3Ru} myplace='experience3_ru' />
+            <MyInput myValue={experience4_uz} mySetValueChange={setExperience4Uz} myplace='experience4_uz' />
+            <MyInput myValue={experience4_ru} mySetValueChange={setExperience4Ru} myplace='experience4_ru' />
+            <MyInput myValue={vedioUrl} mySetValueChange={setVedioUrl} myplace='vedioUrl' />
+            <select
+              className='text-[#2D3663] mt-8 w-[550px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4'
+              value={category_name}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="" disabled>Select Category</option>
+              {categories.map((cat) => (
+                <option key={cat.id} value={cat.id}>{cat.category_name}</option>
+              ))}
+            </select>
             <button onClick={handleShowMore} type="submit" className='ml-[150px] flex items-center justify-center gap-3 text-white rounded-3xl w-[250px] pt-3 pb-3 mt-[30px] bg-blue-950 hover:bg-slate-900'>
               Submit
             </button>
