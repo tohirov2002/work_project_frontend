@@ -4,6 +4,7 @@ import admin from '../../assets/images/mri1.png'
 import { FaTelegram } from "react-icons/fa";
 
 const Section3 = () => {
+
   return (
     <>
         <section className='images mt-[100px] p-[80px] times_div'>

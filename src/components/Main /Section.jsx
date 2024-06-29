@@ -15,7 +15,7 @@ const Swipers = () => {
         loop={true} 
         navigation={true} 
         autoplay={{
-            delay: 3000,
+            delay: 4000,
             disableOnInteraction: false,
         }}
         modules={[Navigation, Autoplay]} 
