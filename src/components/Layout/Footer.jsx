@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from '../../assets/images/logo.png'
 import { FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
@@ -6,26 +6,29 @@ import { FaInstagram } from "react-icons/fa";
 import { IoTime } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import {Context} from '../Context/Context'
 
 const Footer = () => {
+  const {mood} = useContext(Context)
+
   return (
     <>
       <section className='mt-[100px] container'>
-        <h1 className='text-center text-[40px] font-bold text-blue-950 maps_title'>Location</h1>
-        <div className='mt-[40px] flex  justify-around header_maps'>
+        <h1 className={`${mood? 'text-blue-950' : 'text-white'} text-center text-[40px] font-bold  maps_title`}>Location</h1>
+        <div className='mt-[50px] flex  justify-around header_maps'>
           <div className='mt-[50px] maps_div'>
-          <p className='text-[26px] font-bold text-blue-950 max-w-[400px] maps_title1 maps_box'>Sog'lom Hayot</p>
-            <div className='flex items-center mt-[20px] maps_box'>
-              <IoTime className='w-[30px] h-[30px] text-blue-950'/>
-              <p className='ml-5 text-[18px] font-bold text-blue-950 '>Ish vaqti: 24/7</p>
+          <p className={`${mood? 'text-blue-950' : 'text-white'} text-[26px] font-bold max-w-[400px] maps_title1 maps_box`}>Sog'lom Hayot</p>
+            <div className={`${mood? 'text-blue-950' : 'text-white'} flex items-center mt-[30px] maps_box`}>
+              <IoTime className='w-[30px] h-[30px] '/>
+              <p className='ml-5 text-[18px] font-bold'>Ish vaqti: 24/7</p>
             </div>
-            <div className='flex items-center mt-5 maps_box'>
-              <FaLocationDot className='cursor-pointer w-[30px] h-[30px] text-blue-950'/>
-              <p className='ml-5 text-[18px] font-bold text-blue-950 max-w-[400px]'>Toshkent shahar, Yangihayot tumani, massiv Yo’ldosh 7 kvartal 9 uy</p>
+            <div className={`${mood? 'text-blue-950' : 'text-white'} flex items-center mt-8 maps_box`}>
+              <FaLocationDot className='cursor-pointer w-[30px] h-[30px]'/>
+              <p className='ml-5 text-[18px] font-bold max-w-[400px]'>Toshkent shahar, Yangihayot tumani, massiv Yo’ldosh 7 kvartal 9 uy</p>
             </div>
-            <div className='flex items-center mt-5 maps_box'>
-              <Link to={"tel:+9985563311"}><FaPhoneAlt className='cursor-pointer w-[30px] h-[30px] text-blue-950'/></Link>
-              <Link to={"tel:+9985563311"} className='cursor-pointer ml-5 text-[18px] font-bold text-blue-950 max-w-[400px]'>Phone Number: +998 556 33 11</Link>
+            <div className={`${mood? 'text-blue-950' : 'text-white'} flex items-center mt-8 maps_box`}>
+              <Link to={"tel:+9985563311"}><FaPhoneAlt className='cursor-pointer w-[30px] h-[30px]'/></Link>
+              <Link to={"tel:+9985563311"} className='cursor-pointer ml-5 text-[18px] font-bold max-w-[400px]'>Phone Number: +998 556 33 11</Link>
             </div>
           </div>
           <div>

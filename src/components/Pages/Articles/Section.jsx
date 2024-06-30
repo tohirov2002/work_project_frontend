@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import turk from '../../../assets/images/turk.jpg'
 import miya from '../../../assets/images/miya.jpg'
 import retsep from '../../../assets/images/retsep.jpg'
@@ -11,6 +11,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { Context } from '../../Context/Context';
 
 
 const Section = () => {
@@ -28,6 +29,8 @@ const Section = () => {
         handleData();
     }, [])
 
+    const { mood } = useContext(Context)
+
     return (
         <section className='mt-[20px]'>
             <div className='article_image'>
@@ -40,15 +43,15 @@ const Section = () => {
                         data.map((item) => (
                             <li key={item.id} className='cursor-pointer news_item'>
                                 <img className='max-w-[450px] h-[350px] rounded-md hover_img news_img' src={item.image} alt="turk" />
-                                <NavLink to={`/maqola/${item.id}`}> <p className='text-[#2D3663] mt-5 font-bold text-[18px] max-w-[400px]'>{item.title_uz}</p></NavLink>
+                                <NavLink to={`/maqola/${item.id}`}><p className={`${mood? 'text-[#2D3663] ': 'text-white'} mt-5 font-bold text-[18px] max-w-[400px]`}>{item.title_uz}</p></NavLink>
                                 <div className='mt-5 flex items-center'>
-                                    <div className='flex items-center'>
-                                        <IoMdTime className='text-[#2D3663] w-[20px] h-[20px]' />
-                                        <h1 className='text-[#2D3663] text-[16px] ml-2'>{item.date_time}</h1>
+                                    <div className={`${mood ? 'text-[#2D3663] ' : 'text-white'} flex items-center`}>
+                                        <IoMdTime className='w-[20px] h-[20px]' />
+                                        <h1 className={`text-[16px] ml-2`}>{item.date_time}</h1>
                                     </div>
-                                    <div className='flex items-center ml-5'>
-                                        <FaRegEye className='text-[#2D3663] w-[20px] h-[20px]' />
-                                        <h1 className='text-[#2D3663] text-[16px] ml-2'>{item.views}</h1>
+                                    <div className={`${mood? 'text-[#2D3663] ': 'text-white'} flex items-center ml-5`}>
+                                        <FaRegEye className='w-[20px] h-[20px]' />
+                                        <h1 className='text-[16px] ml-2'>{item.views}</h1>
                                     </div>
                                 </div>
                             </li>
@@ -84,11 +87,11 @@ const Section = () => {
                     </li> */}
                 </ul>
                 <div className='flex items-center gap-2 mt-[20px] news_item1'>
-                    <FaFacebook className='cursor-pointer w-[35px] h-[35px] text-blue-600' />
-                    <FaWhatsappSquare className='cursor-pointer w-[35px] h-[35px] text-green-600' />
-                    <FaTelegram className='cursor-pointer w-[35px] h-[35px] text-blue-600' />
-                    <FaLinkedin className='cursor-pointer w-[35px] h-[35px] text-blue-600' />
-                    <FaSquareTwitter className='cursor-pointer w-[35px] h-[35px] text-blue-600' />
+                    <FaFacebook className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
+                    <FaWhatsappSquare className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
+                    <FaTelegram className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
+                    <FaLinkedin className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
+                    <FaSquareTwitter className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
                 </div>
             </div>
         </section>

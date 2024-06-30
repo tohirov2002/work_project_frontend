@@ -6,11 +6,14 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
 import { Navigation, Autoplay } from 'swiper/modules';
+import { useContext } from 'react';
+import { Context } from '../Context/Context';
 
 const Swipers = () => {
   const {t} = useTranslation()
+  const {mood} = useContext(Context)
   return (
-    <div className='mt-[30px]'>
+    <div className={`${mood? '' : 'bg-[#2D3663]'} pt-[30px]`}>
    <Swiper 
         loop={true} 
         navigation={true} 

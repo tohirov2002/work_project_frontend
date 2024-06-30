@@ -7,12 +7,28 @@
         appearance: none;
     }
 }
-
 .container {
     width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+.hambtn_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 700px;
+    z-index: 999;
+    transition: .5s ease-in-out !important;
+} 
+.show5 {
+    right: 0;
+}  
 
 /* .columns {
     display: block;
@@ -175,7 +191,7 @@
 
 .border_dashet {
     margin-top: 20px;
-    border: 1px dashed #878ca1;
+    border: 1px dashed;
 }
 
 .show1 {

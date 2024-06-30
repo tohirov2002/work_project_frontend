@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Mri from '../../assets/images/mri1.png'
 import Alisher from '../../assets/images/alisher.jpg'
 import { FaArrowCircleRight } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import {Context} from '../Context/Context'
 
 
 const Section2 = () => {
     const [data, setData] = useState([]);
+    const {mood} = useContext(Context)
 
     useEffect(() => {
         const handleData = async () => {
@@ -37,8 +39,8 @@ const Section2 = () => {
             </section>
             <section className='mt-[80px] container'>
                 <div className='flex flex-col items-center justify-center text-center'>
-                    <h1 className='text-[42px] text-blue-950'>Бизнинг шифокорларимиз</h1>
-                    <p className='text max-w-[750px] text-[18px] text-[#2D3663] mt-3'>Беморларни олий тоифали шифокорлар, фан номзодлари ва докторлари қабул қиладилар. Ташриф буюрувчилар кенг қамровли ва тўлиқ текширувлардан ўтишлари ҳамда малакали тиббий ёрдам олишлари мумкин.</p>
+                    <h1 className={`${mood? 'text-blue-950': 'text-white'} text-[42px] `}>Бизнинг шифокорларимиз</h1>
+                    <p className={`${mood? 'text-[#2D3663]': 'text-white'} text max-w-[750px] text-[18px] mt-3`}>Беморларни олий тоифали шифокорлар, фан номзодлари ва докторлари қабул қиладилар. Ташриф буюрувчилар кенг қамровли ва тўлиқ текширувлардан ўтишлари ҳамда малакали тиббий ёрдам олишлари мумкин.</p>
                 </div>
                 <ul className='mt-[50px] flex items-center justify-between doctors'>
                     {
@@ -53,7 +55,7 @@ const Section2 = () => {
                     }
                 </ul>
                 <div className='flex items-center justify-center mt-[40px]'>
-                    <NavLink to={'/doctors'} className='flex items-center justify-center gap-3 text-white rounded-3xl w-[250px] pt-3 pb-3 mt-[30px] ml-4 bg-blue-950 hover:bg-slate-900'>Шифокорларимиз <FaArrowCircleRight className='mt-1 w-[18px] h-[18px]' /></NavLink>
+                    <NavLink to={'/doctors'} className={`${mood? 'text-white bg-blue-950 hover:bg-slate-900': 'text-blue-950 bg-white hover:bg-blue-50'} flex items-center justify-center gap-3  rounded-3xl w-[250px] pt-3 pb-3 mt-[30px] ml-4 bg-blue-950 `}>Шифокорларимиз <FaArrowCircleRight className='mt-1 w-[18px] h-[18px]' /></NavLink>
                 </div>
             </section>
         </>

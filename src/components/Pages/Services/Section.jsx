@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import { LiaBrainSolid } from "react-icons/lia";
 import { LiaHeartbeatSolid } from "react-icons/lia";
 import { FaArrowCircleRight } from "react-icons/fa";
@@ -17,9 +17,11 @@ import kitchen2 from '../../../assets/images/kitchen2.jpg'
 import kitchen3 from '../../../assets/images/kitchen3.jpg'
 import kitchen4 from '../../../assets/images/kitchen4.jpg'
 import Forms from '../../Forms'
+import {Context} from '../../Context/Context'
 
 const Section = () => {
   const [showModal,setModal] = useState(false)
+  const {mood} = useContext(Context)
   
   const handleShow = () => {
     setModal(!showModal)
@@ -32,12 +34,12 @@ const Section = () => {
             </div>
             <div className="container">
                 <div className='mt-[100px] services_title1'>
-                    <h1 className='text-white font-bold bg-[#2D3663] h-[200px] text-[40px] pr-[60px] flex justify-end pt-[100px] services_title'>— БИЗНИНГ УСТУВОР ВАЗИФАМИЗ!</h1>
+                    <h1 className={`${mood? 'bg-[#2D3663] text-white': 'bg-white text-[#2D3663] rounded-[10px]'} font-bold  h-[200px] text-[40px] pr-[60px] flex justify-end pt-[100px] services_title`}>— БИЗНИНГ УСТУВОР ВАЗИФАМИЗ!</h1>
                 </div> 
                 <div className='mt-[100px]'>
-                    <h1 className='text-[#2D3663] text-center font-bold text-[20px]'>Бизнинг хизматлар</h1>
+                    <h1 className={`${mood? 'text-[#2D3663]': 'text-white'}  text-center font-bold text-[20px]`}>Бизнинг хизматлар</h1>
                     <div className='flex items-centerv justify-center mt-1'>
-                        <h1 className='text-[#2D3663] text-center font-bold text-[40px] max-w-[1100px] services_title2'>Клиникамизда дунёнинг энг яхши шифокорлари сизни даволашади</h1>
+                        <h1 className={`${mood? 'text-[#2D3663]': 'text-white'} text-[#2D3663] text-center font-bold text-[40px] max-w-[1100px] services_title2`}>Клиникамизда дунёнинг энг яхши шифокорлари сизни даволашади</h1>
                     </div>
                 </div>
                 <div className='flex justify-between mt-[30px] services'>
@@ -51,23 +53,23 @@ const Section = () => {
                                 <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 '/>
                                 <p className='text-[24px] font-bold text-blue-950 mt-2 '>гемодиализ</p>
                             </li>
-                            <li className='item bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
+                            <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
                                 <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 '/>
                                 <p className='text-[24px] font-bold text-blue-950 mt-2 '>гемодиализ</p>
                             </li>
-                            <li className='item bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
+                            <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
                                 <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 '/>
                                 <p className='text-[24px] font-bold text-blue-950 mt-2 '>невропатолог</p>
                             </li>
-                            <li className='item bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
+                            <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
                                 <LiaHeartbeatSolid className='icon1 w-[50px] h-[50px] text-blue-950 '/>
                                 <p className='text-[24px] font-bold text-blue-950 mt-2 '>кардиолог</p>
                             </li>
-                            <li className='bg-white item w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
+                            <li className='mt-1 bg-white item w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
                                 <LiaToothSolid className='icon1 w-[50px] h-[50px] text-blue-950 '/>
                                 <p className='text-[24px] font-bold text-blue-950 mt-2 '>Stamatalog</p>
                             </li>
-                            <li className='bg-white item w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
+                            <li className='bg-white mt-1 item w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
                                 <LiaToothSolid className='icon1 w-[50px] h-[50px] text-blue-950 '/>
                                 <p className='text-[24px] font-bold text-blue-950 mt-2 '>Stamatalog</p>
                             </li>
@@ -151,9 +153,9 @@ const Section = () => {
                     <img className='max-w-[650px] h-[650px] rounded-[50%] about_img about_img2' src={yotoqjoy} alt="yotoqjoy" />
                 </div>
                 <div className='mt-[10px] mr-[50px] about_main'>
-                    <h1 className='text-[#2D3663] text-[42px] font-bold max-w-[500px] about_text'>Клиникада даволаниш ва яшаш</h1>
-                    <p className='max-w-[600px] text-[16px] text-[#7b809a] mt-5'>Клиникада ҳар бири 22 квадратли 24 та люкс хоналар мавжуд ҳамда улар асосий бинонинг иккинчи ва учинчи қаватларида жойлашган. Бу ерда сизни шовқиндан ҳимояланган, шифтлари баланд, кўркам ва ёруғ хоналар кутмоқда. Ҳар бир хона барча қулайликларни жамлаган ҳолда нафис жиҳозланган. Қулай макон ҳамда функционаллик жиҳатдан бу хоналар кенг, шинам ҳаммом ҳамда ҳожатхоналарга эга.</p>
-                    <p className='max-w-[600px] text-[16px] text-[#7b809a] mt-8'>Шахсий буюмларни сақлаш учун ҳам алоҳида бўлмалар мавжуд. Люкс хоналардаги эргономик тиббий каравотлар соғлиқни тиклаш учун жуда муҳим бўлган соғлом ва чуқур уйқу имкониятини беради. Хоналар кабель телевидениеси, интернетга кириш учун Wi-Fi, музлаткич ва парвариш қилувчилар учун алоҳида ўринлар билан жиҳозланган.</p>
+                    <h1 className={`${mood? 'text-[#2D3663]': 'text-white'} text-[42px] font-bold max-w-[500px] about_text`}>Клиникада даволаниш ва яшаш</h1>
+                    <p className={`${mood? 'text-[#7b809a]': 'text-[#dfdede]'} max-w-[600px] text-[16px] text-[#7b809a] mt-5`}>Клиникада ҳар бири 22 квадратли 24 та люкс хоналар мавжуд ҳамда улар асосий бинонинг иккинчи ва учинчи қаватларида жойлашган. Бу ерда сизни шовқиндан ҳимояланган, шифтлари баланд, кўркам ва ёруғ хоналар кутмоқда. Ҳар бир хона барча қулайликларни жамлаган ҳолда нафис жиҳозланган. Қулай макон ҳамда функционаллик жиҳатдан бу хоналар кенг, шинам ҳаммом ҳамда ҳожатхоналарга эга.</p>
+                    <p className={`${mood? 'text-[#7b809a]': 'text-[#dfdede]'} max-w-[600px] text-[16px] text-[#7b809a] mt-8`}>Шахсий буюмларни сақлаш учун ҳам алоҳида бўлмалар мавжуд. Люкс хоналардаги эргономик тиббий каравотлар соғлиқни тиклаш учун жуда муҳим бўлган соғлом ва чуқур уйқу имкониятини беради. Хоналар кабель телевидениеси, интернетга кириш учун Wi-Fi, музлаткич ва парвариш қилувчилар учун алоҳида ўринлар билан жиҳозланган.</p>
                     <div className='mt-[40px] flex items-center gap-5 img_bt'>
                         <img className='w-[120px] h-[100px]' src={bed1} alt="soglom" />
                         <img className='w-[120px] h-[100px]' src={bed2} alt="soglom" />
@@ -167,9 +169,9 @@ const Section = () => {
                 </div>
                 <div className='flex  justify-between mt-[150px] about_div about'>
                 <div className='mt-[10px]'>
-                    <h1 className='text-[#2D3663] text-[42px] font-bold max-w-[900px] about_text'>Клиникада овқатланиш</h1>
-                    <p className='max-w-[680px] text-[16px] text-[#7b809a] mt-5'>Тажрибамиз шуни кўрсатадики, тўғри овқатланиш соғайишнинг муҳим омилларидан биридир. Бизнинг бош ошпазларимиз фойдали ва мазали таом тушунчалари бир-бирига зид келмаслигини кундалик фаолиятларида исботлаб борадилар. Таклиф этилаётган таомлар нафақат хилма-хил, балки тиббий талабларга мувофиқ ҳамдир. Ошхонамизда ҳам Осиё, ҳам Европа ошхоналари унсурларини учратиш мумкин. Айрим рецептлар эса бувижонларимизнинг тажрибаларига асосланган, зеро биз маҳаллий ишлаб чиқарувчиларнинг сархил ва мавсумий маҳсулотларидан фойдаланиш тарафдоримиз.</p>
-                    <p className='max-w-[600px] text-[16px] text-[#7b809a] mt-8'>Ташриф буюрувчиларимиз учун шинам қаҳвахона ишлаб туради ва унда моҳир бариста томонидан тайёрланган мазали ширинликлар ва  севимли ичимликлар тақдим этилади</p>
+                    <h1 className={`${mood? 'text-[#2D3663]': 'text-white'}  text-[42px] font-bold max-w-[900px] about_text`}>Клиникада овқатланиш</h1>
+                    <p className={`${mood? 'text-[#7b809a]': 'text-[#dfdede]'} max-w-[680px] text-[16px] mt-5`}>Тажрибамиз шуни кўрсатадики, тўғри овқатланиш соғайишнинг муҳим омилларидан биридир. Бизнинг бош ошпазларимиз фойдали ва мазали таом тушунчалари бир-бирига зид келмаслигини кундалик фаолиятларида исботлаб борадилар. Таклиф этилаётган таомлар нафақат хилма-хил, балки тиббий талабларга мувофиқ ҳамдир. Ошхонамизда ҳам Осиё, ҳам Европа ошхоналари унсурларини учратиш мумкин. Айрим рецептлар эса бувижонларимизнинг тажрибаларига асосланган, зеро биз маҳаллий ишлаб чиқарувчиларнинг сархил ва мавсумий маҳсулотларидан фойдаланиш тарафдоримиз.</p>
+                    <p className={`${mood? 'text-[#7b809a]': 'text-[#dfdede]'} max-w-[600px] text-[16px] mt-8`}>Ташриф буюрувчиларимиз учун шинам қаҳвахона ишлаб туради ва унда моҳир бариста томонидан тайёрланган мазали ширинликлар ва  севимли ичимликлар тақдим этилади</p>
                     <div className='mt-[40px] flex items-center gap-5 img_bt'>
                         <img className='w-[120px] h-[100px]' src={kitchen1} alt="soglom" />
                         <img className='w-[120px] h-[100px]' src={kitchen2} alt="soglom" />

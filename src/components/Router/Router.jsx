@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Routes, Route } from 'react-router-dom'
 import About from '../Pages/About/About'
 import Main from '../Main /Main'
@@ -18,12 +18,13 @@ import AddNews from '../AddForms/News/News'
 import UpdateComments from '../AddForms/Comments/UpdateComments'
 import Departament from '../AddForms/Departaments/Departament'
 import DoctorCategory from '../AddForms/DoctorCategories/DoctorCategory'
-
+import { Context } from '../Context/Context'
 
 
 const Router = () => {
+  const {mood} = useContext(Context)
   return (
-    <div>
+    <div className={`${mood? '' : 'bg-[#2D3663]'}`}>
             <Routes>
                 <Route path='/' element={<Main/>}/>
                 <Route path='/about' element={<About/>}/>
