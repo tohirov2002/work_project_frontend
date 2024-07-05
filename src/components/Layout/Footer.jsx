@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <footer className='bg-[#2d3663] p-10 mt-[70px]'>
+      <footer className={`${mood? 'bg-[#2d3663]': 'bg-[#2b3055]'}  p-10 mt-[70px]`}>
           <div className='container flex  justify-between footer_div'>
               <div className='w-full max-w-[400px]'>
                   <div className='flex items-center footer_div'>

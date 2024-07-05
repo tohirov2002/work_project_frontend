@@ -11,7 +11,6 @@ import axios from 'axios';
 import {Context} from '../Context/Context'
 
 const Section1 = () => {
-    const { t } = useTranslation()
     const count1 = useMotionValue(0);
     const count2 = useMotionValue(0);
     const count3 = useMotionValue(0);
@@ -47,6 +46,7 @@ const Section1 = () => {
 
     const [data, setData] = useState([]);
     const {mood} = useContext(Context)
+    const { t } = useTranslation()
 
     useEffect(() => {
         const handleData = async () => {
@@ -147,9 +147,9 @@ const Section1 = () => {
             </section>
             <section className='container mt-[100px] flex justify-between quality'>
                 <div className='quality_left'>
-                    <h1 className={`${mood? 'text-[#2D3663]' : 'text-white'} text-[20px]`}>Sog'lom Hayot</h1>
-                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-2 font-bold text-[36px] max-w-[500px] text-blue-950 quality_text`}>Кўп тармоқли клиникага хуш келибсиз</p>
-                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-3 max-w-[650px] text-[20px] text-blue-950 quality_text`}>Биз Сиз билан ўзимизнинг кўп тармоқли ажойиб клиникамизда кўришиб турганимиздан мамнунмиз. Бу рисола саҳифалари орқали биз Сизни клиникамизнинг кенг қамровли хизматлари билан таништирамиз. Бу ерда, яъни тинч ва хавфсиз ҳудудда Сиз ўзингизни хотиржам ҳис қилишингиз, соғлигингизни тиклашингиз ва кучга тўлишингиз мумкин.</p>
+                    <h1 className={`${mood? 'text-[#2D3663]' : 'text-white'} text-[20px]`}>{t('title')}</h1>
+                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-2 font-bold text-[36px] max-w-[500px] text-blue-950 quality_text`}>{t('soz10')}</p>
+                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-3 max-w-[650px] text-[20px] text-blue-950 quality_text`}>{t('soz11')}</p>
                 </div>
                 <div className='mr-[50px] quality_right'>
                     <p className={`${mood? 'text-[#2D3663]' : 'text-white'} text-[20px]`}>Бизнинг кўрсаткичларимиз</p>
