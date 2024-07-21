@@ -4,7 +4,6 @@ import About from '../Pages/About/About'
 import Main from '../Main /Main'
 import Services from '../Pages/Services/Services'
 import Departaments from '../Pages/Departaments/Departaments'
-import Insurance from '../Pages/Insurance/Insurance'
 import Articles from '../Pages/Articles/Articles'
 import Connections from '../Pages/Connection/Connection'
 import Doctors from '../Shifokorlar/Doctors'
@@ -32,10 +31,9 @@ const Router = () => {
         <Route path='/about' element={<About />} />
         <Route path='/services' element={<Services />} />
         <Route path='/departaments' element={<Departaments />} />
-        <Route path='/Insurance' element={<Insurance />} />
         <Route path='/Articles' element={<Articles />} />
         <Route path='/connections' element={<Connections />} />
-        <Route path='/doctors' element={<Doctors />} />
+        <Route path='/rahbar' element={<Doctors />} />
         <Route path='/doctor/:id' element={<Doctor />} />
         <Route path='/maqola/:id' element={<Section1 />} />
         <Route path='/sections/:id' element={<Sections />} />

@@ -3,7 +3,7 @@ import { AiFillHome } from "react-icons/ai"
 import { FcStatistics } from "react-icons/fc"
 import { BsArrowLeftSquareFill } from "react-icons/bs"
 import { NavLink, Outlet } from 'react-router-dom';
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/gerb.webp'
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaCommentDots } from "react-icons/fa";
 import { FaNewspaper } from "react-icons/fa6";
@@ -21,7 +21,7 @@ const AdminPanel = () => {
           <div className=' flex items-center mt-[50px]'>
             <NavLink to={'/'}><img className='logo_img w-[70px] h-[70px]' src={Logo} alt="logo" /></NavLink>
             <NavLink to={'/'} >
-              <h1 className={`logo_title text-[20px] text-center w-[20px] ml-3 text-white font-bold font-mono dark:text-white`}> Sog'lom Hayot</h1>
+              <h1 className={`logo_title text-[20px] text-center w-[150px] ml-3 text-white font-bold font-mono dark:text-white`}> G'uzor Tuman Hokimligi</h1>
             </NavLink>
           </div>
           <NavLink to={'/'}>
@@ -39,7 +39,7 @@ const AdminPanel = () => {
           <NavLink to={'doctor'}>
             <div className='flex items-center gap-2 pt-5 cursor-pointer'>
               <FaUserDoctor className='text-white w-[20px] h-[20px]' />
-              <h1 className='text-white text-[18px]'>Shifokorlar</h1>
+              <h1 className='text-white text-[18px]'>Rahbarlar</h1>
             </div>
           </NavLink>
           <NavLink to={'comment'}>

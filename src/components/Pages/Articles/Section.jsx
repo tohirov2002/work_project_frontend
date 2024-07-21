@@ -1,7 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import turk from '../../../assets/images/turk.jpg'
-import miya from '../../../assets/images/miya.jpg'
-import retsep from '../../../assets/images/retsep.jpg'
 import { IoMdTime } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
@@ -12,6 +9,7 @@ import { FaSquareTwitter } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { Context } from '../../Context/Context';
+import { useTranslation } from 'react-i18next';
 
 
 const Section = () => {
@@ -30,11 +28,12 @@ const Section = () => {
     }, [])
 
     const { mood } = useContext(Context)
+    const {t} = useTranslation()
 
     return (
         <section className='mt-[20px]'>
             <div className='article_image'>
-                <h1 className='text-center text-white font-bold bg-[#00000050] h-[200px] text-[48px] pt-[60px] doctors_title'>Мақолалар</h1>
+                <h1 className='text-center text-white font-bold bg-[#00000050] h-[200px] text-[48px] pt-[60px] doctors_title'>{t("soz5")}</h1>
             </div>
             <div className='container'>
                 <div className='borders'></div>

@@ -25,7 +25,7 @@ const Doctors = () => {
         <section>
           <div className='mt-[20px]'>
             <div className='doctors_images'>
-              <h1 className='bg-[#68626264] font-bold h-[200px] text-center text-white  text-[46px] pt-[50px] doctors_title'>Бизнинг шифокорларимиз</h1>
+              <h1 className='bg-[#68626264] font-bold h-[200px] text-center text-white  text-[46px] pt-[50px] doctors_title'>Бизнинг Rahbarlarimiz</h1>
             </div>
           </div>
           <div className="container">

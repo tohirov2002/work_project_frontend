@@ -1174,7 +1174,7 @@
 
 /* Swipers */
 .img1 {
-    background-image: url("../assets/images/yig'ilish.png");
+    background-image: url("../assets/images/guzor.jpg");
     max-width: 100%;
     height: 800px;
     background-size: cover;
@@ -1182,7 +1182,7 @@
 }
 
 .img2 {
-    background-image: url('../assets/images/doc.png');
+    background-image: url('../assets/images/masjid.jpg');
     max-width: 100%;
     height: 800px;
     background-size: cover;
@@ -1190,7 +1190,7 @@
 }
 
 .img3 {
-    background-image: url('../assets/images/skori.png');
+    background-image: url('../assets/images/savol.jpg');
     max-width: 100%;
     height: 800px;
     background-size: cover;

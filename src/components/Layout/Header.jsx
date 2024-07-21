@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/gerb.webp'
 import { GiHamburgerMenu } from "react-icons/gi";
 // import search from '../assets/images/search.svg'
 import LanguageDrop from '../LanguageDrop';
@@ -31,14 +31,13 @@ function Header() {
             <li className='flex items-center'>
               <NavLink to={'/'}><img className='logo_img w-[70px] h-[70px]' src={Logo} alt="logo" /></NavLink>
               <NavLink to={'/'} >
-                <h1 className={`logo_title text-[20px] text-center w-[20px] ml-3 text-blue-950 font-bold font-mono dark:text-white`}> Sog'lom Hayot</h1>
+                <h1 className={`logo_title text-[20px] text-center w-[150px] ml-3 text-blue-950 font-bold font-mono dark:text-white`}>G'uzor Tuman Hokimligi</h1>
               </NavLink>
             </li>
             <li className='ml-[150px] header_item'>
               <NavLink to={'/about'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz1")}</NavLink>
               <NavLink to={'/services'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl dark:text-white'>{t("soz2")}</NavLink>
-              <NavLink to={'/doctors'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl dark:text-white'>{t("soz3")}</NavLink>
-              <NavLink to={'/Insurance'} className='item text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl dark:text-white'>{t("soz4")}</NavLink>
+              <NavLink to={'/rahbar'} className='item1 text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl dark:text-white'>{t("soz3")}</NavLink>
               <NavLink to={'/Articles'} className='item text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl dark:text-white'>{t("soz5")}</NavLink>
               <NavLink to={'/connections'} className='item text-[20px] hover:text-blue-500 text-blue-800 hover:cursor-pointer ml-8 font-bold shadow-xl dark:text-white'>{t("soz6")}</NavLink>
             </li>
@@ -77,7 +76,6 @@ function Header() {
             <NavLink to={'/about'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz1")}</NavLink>
             <NavLink to={'/services'} className='text-[20px] hover:text-blue-500 text-white hover:cursor-pointer  font-bold shadow-xl dark:text-white'>{t("soz2")}</NavLink>
             <NavLink to={'/doctors'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz3")}</NavLink>
-            <NavLink to={'/Insurance'} className='text-[20px] hover:text-blue-500 text-white hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz4")}</NavLink>
             <NavLink to={'/Articles'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz5")}</NavLink>
             <NavLink to={'/connections'} className='text-[20px] hover:text-blue-500 text-white hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz6")}</NavLink>
           </div>

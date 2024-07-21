@@ -30,8 +30,8 @@ const Section1 = () => {
         const animation1 = animate(count1, 50, { duration: 7 });
         const animation2 = animate(count2, 20, { duration: 6 });
         const animation3 = animate(count3, 80, { duration: 7 });
-        const animation4 = animate(count4, 100, { duration: 10 });
-        const animation5 = animate(count5, 99, { duration: 10 });
+        const animation4 = animate(count4, 212, { duration: 7 });
+        const animation5 = animate(count5, 5, { duration: 10 });
         const animation6 = animate(count6, 1, { duration: 8 });
 
 
@@ -62,7 +62,7 @@ const Section1 = () => {
     return (
         <>
             <section className='container main_section1_div pt-[50px] flex items-center justify-between'>
-                <div className={`shadow-xl bg-[#2d3663] ${mood? '' : 'bg-white'} max-w-[400px] p-[30px] rounded-[10px] pl-[30px] pb-[50px] section1_left`}>
+                <div className={`shadow-xl bg-[#2d3663] ${mood? '' : 'bg-white'} max-w-[400px] p-[30px] rounded-[10px] pl-[30px] h-[415px] pb-[50px] section1_left`}>
                     <h1 className={`${mood? 'text-white' : 'text-[#2D3663]'} text-[32px] font-bold  mt-4 ml-4`}>{t("title")}</h1>
                     <p className={`${mood? 'text-white' : 'text-[#2D3663]'} text-[20px] font-normal max-w-[300px] mt-4 ml-4 section1_left_title`}>{t("text")}</p>
                     <button className=' text-white rounded-3xl w-[150px] pt-2 pb-2 mt-[30px] ml-4 bg-blue-600 hover:bg-blue-800'>{t("Batafsil")}</button>
@@ -82,21 +82,17 @@ const Section1 = () => {
                         }
                     </ul>
                     <ul className='flex items-center justify-between bg-blue-50 mt-[50px] gap-5 section1_list'>
-                        <li className='bg-white item  w-[200px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
+                        <li className='bg-white item  w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
                             <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Лор</p>
+                            <p className='text-[22px] font-bold text-blue-950 mt-2 '>Davlat boshqaruvi</p>
                         </li>
-                        <li className='bg-white item w-[200px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
+                        <li className='bg-white item w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
                             <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Офтальмолог</p>
+                            <p className='text-[22px] font-bold text-blue-950 mt-2 '>Fuqorolar qonunchiligi</p>
                         </li>
-                        <li className='bg-white item w-[200px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <LiaToothSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Stamatalog</p>
-                        </li>
-                        <li className='bg-white item w-[200px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
+                        <li className='bg-white item w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
                             <LiaHeartbeatSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Денстометрия</p>
+                            <p className='text-[22px] font-bold text-blue-950 mt-2 '>Oila qonunchiligi</p>
                         </li>
                     </ul>
                 </div>
@@ -148,56 +144,24 @@ const Section1 = () => {
             <section className='container mt-[100px] flex justify-between quality'>
                 <div className='quality_left'>
                     <h1 className={`${mood? 'text-[#2D3663]' : 'text-white'} text-[20px]`}>{t('title')}</h1>
-                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-2 font-bold text-[36px] max-w-[500px] text-blue-950 quality_text`}>{t('soz10')}</p>
+                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-2 font-bold text-[32px] max-w-[600px] text-blue-950 quality_text`}>{t('soz10')}</p>
                     <p className={`${mood? 'text-[#2D3663]' : 'text-white'} mt-3 max-w-[650px] text-[20px] text-blue-950 quality_text`}>{t('soz11')}</p>
                 </div>
                 <div className='mr-[50px] quality_right'>
                     <p className={`${mood? 'text-[#2D3663]' : 'text-white'} text-[20px]`}>Бизнинг кўрсаткичларимиз</p>
-                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} font-bold text-[36px] mt-2`}>Нима учун бизга ишонишади ?</p>
-                    <ul className='mt-[40px] flex items-center justify-between gap-[40px] circle_list'>
+                    <p className={`${mood? 'text-[#2D3663]' : 'text-white'} font-bold text-[36px] mt-2`}>G'uzor tumani </p>
+                    <ul className='mt-[30px] flex items-center justify-between gap-[40px] circle_list'>
                         <li className={`${mood? 'border-blue-950' : 'border-white'} hover:cursor-pointer hover:shadow-2xl ${mood? 'hover:bg-blue-50': ''} w-[200px] h-[200px] rounded-[50%] border-[5px] flex flex-col items-center justify-center`}>
-                            <p className={`${mood? 'text-blue-950' : 'text-white'} font-bold text-[40px] flex items-center`}><motion.p>{rounded4}</motion.p>%</p>
-                            <p className={`${mood? 'text-blue-950' : 'text-white'} text-[24px] text-blue-950 font-medium`}>Sifat</p>
-                        </li>
-                        <li className={`${mood? 'border-blue-950' : 'border-white'} hover:cursor-pointer hover:shadow-2xl ${mood? 'hover:bg-blue-50': ''} w-[200px] h-[200px] rounded-[50%] border-[5px] flex flex-col items-center justify-center`}>
-                            <p className={`${mood? 'text-blue-950' : 'text-white'} font-bold text-[40px] flex items-center`}><motion.p>{rounded5}</motion.p>%</p>
-                            <p className={`${mood? 'text-blue-950' : 'text-white'} text-[24px] text-blue-950 font-medium`}>Qulaylik</p>
+                            <p className={`${mood? 'text-blue-950' : 'text-white'} font-bold text-[30px] flex items-center`}><motion.p>{rounded4}</motion.p>ming</p>
+                            <p className={`${mood? 'text-blue-950' : 'text-white'} text-[24px] text-blue-950 font-medium`}>Aholi</p>
                         </li>
                         <li className={`${mood? 'border-blue-950' : 'border-white'} hover:cursor-pointer hover:shadow-2xl ${mood? 'hover:bg-blue-50': ''} w-[200px] h-[200px] rounded-[50%] border-[5px] flex flex-col items-center justify-center`}>
-                            <p className={`${mood? 'text-blue-950' : 'text-white'} font-bold text-[40px] flex items-center`}><motion.p>{rounded4}</motion.p>%</p>
-                            <p className={`${mood? 'text-blue-950' : 'text-white'} text-[24px] text-blue-950 font-medium`}>Sanatariya</p>
+                            <p className={`${mood? 'text-blue-950' : 'text-white'} font-bold text-[40px] flex items-center`}><motion.p>{rounded5}</motion.p>ta</p>
+                            <p className={`${mood? 'text-blue-950' : 'text-white'} text-[24px] text-blue-950 font-medium`}>Shaharcha</p>
                         </li>
-                    </ul>
-                </div>
-            </section>
-            <section className='container mt-[100px] coiffsent'>
-                <div className='mr-[50px] p-[50px] rounded-2xl bg-white shadow-2xl coiffsent'>
-                    <ul className='flex items-center justify-between coiffsent_list'>
-                        <li className=' bg-white p-5 rounded-lg hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <p className='font-bold text-[42px] text-blue-950 flex items-center'><motion.h1>{rounded1}</motion.h1>+</p>
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Квалифицированные врачи</p>
-                        </li>
-                        <li className='bg-white p-5 rounded-lg hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <p className='font-bold text-[42px] text-blue-950'><motion.p>{rounded2}</motion.p></p>
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Диагностические отделения</p>
-                        </li>
-                        <li className='bg-white p-5 rounded-lg hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <p className='font-bold text-[42px] text-blue-950 flex items-center'><motion.p>{rounded3}</motion.p>+</p>
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Год опыта</p>
-                        </li>
-                    </ul>
-                    <ul className='flex items-center justify-between mt-5 coiffsent_list'>
-                        <li className='bg-white p-5 rounded-lg hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <p className='font-bold text-[42px] text-blue-950 flex items-center'><motion.p>{rounded4}</motion.p>+</p>
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Пациенты  каждый день</p>
-                        </li>
-                        <li className='bg-white p-5 rounded-lg hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <p className='font-bold text-[42px] text-blue-950 flex items-center'><motion.p>{rounded5}</motion.p>%</p>
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Точность диагностики</p>
-                        </li>
-                        <li className='bg-white p-5 rounded-lg hover:cursor-pointer flex flex-col items-center justify-center'>
-                            <p className='font-bold text-[42px] text-blue-950'><motion.p>{rounded6}</motion.p></p>
-                            <p className='text-[24px] font-bold text-blue-950 mt-2 '>Филиал</p>
+                        <li className={`${mood? 'border-blue-950' : 'border-white'} hover:cursor-pointer hover:shadow-2xl ${mood? 'hover:bg-blue-50': ''} w-[200px] h-[200px] rounded-[50%] border-[5px] flex flex-col items-center justify-center`}>
+                            <p className={`${mood? 'text-blue-950' : 'text-white'} font-bold text-[40px] flex items-center`}><motion.p>{rounded3}</motion.p>ta</p>
+                            <p className={`${mood? 'text-blue-950' : 'text-white'} text-[24px] text-blue-950 font-medium`}>Qishloq</p>
                         </li>
                     </ul>
                 </div>
