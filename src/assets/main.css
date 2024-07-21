@@ -130,7 +130,7 @@
 
 .images1 {
     height: 200px;
-    background-image: url('../assets/images/image1.jpg');
+    background-image: url('../assets/images/masjid.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -144,7 +144,7 @@
 
 .doctors_images {
     height: 200px;
-    background-image: url('../assets/images/doctors.jpg');
+    background-image: url('../assets/images/savol.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -165,7 +165,7 @@
 
 .article_image {
     height: 200px;
-    background-image: url('../assets/images/maqola4.jpg');
+    background-image: url('../assets/images/news.jpg');
     background-size: cover;
     background-position: center;
 }

@@ -38,17 +38,17 @@ const Doctor = () => {
             <div className="container mt-[100px] flex justify-around doctor_container about">
               <div><img className='max-w-[200px] h-[200px] rounded-xl doctor_images1' src={data.image} alt="alisher" /></div>
               <div>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'}  text-[18px]`}>Кардиолог. Кардиореаниматолог.</p>
-                <h1 className={`${mood? 'text-[#2D3663]': 'text-white'} text-[#2D3663] font-bold text-[28px] mt-8`}>Мутахассислиги:</h1>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] max-w-[900px] mt-5`}>Ўткир ва оғир шароитларда жарроҳлик ва терапевтик беморлар билан ишлаш тажрибасига эга. Кардиологик ва неврологик беморларни (АМИ, инсулт, стентлаш билан ПCИдан кейинги ҳолат) бошқаришга ихтисослашган. ЭКГни дешифрлаш, ЭКГнинг Холтер мониторингини ўқиш ва дешифрлаш малакасига эга. У ултратовуш текшируви остида беморларда турли марказий томирларни жойлаштириш тажрибасига эга. Компютер билан ишлаш тажрибаси бор</p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'}  text-[18px]`}>{data.category_name}</p>
+                <h1 className={`${mood? 'text-[#2D3663]': 'text-white'} text-[#2D3663] font-bold text-[28px] mt-8`}>Электрон почта:</h1>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] max-w-[900px] mt-5`}>{data.specialty_uz}</p>
                 <h1 className={`${mood? 'text-[#2D3663]': 'text-white'} font-bold text-[28px] mt-8`}>Таълими:</h1>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-4`}>2012г. – 2018г. ТТА.</p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-4`}>{data.education}</p>
                 <h1 className={`${mood? 'text-[#2D3663]': 'text-white'} font-bold text-[28px] mt-8`}>Иш тажрибаси:</h1>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>2018 йил – 2020 РСНПМCК клиникалари стажёри.</p>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>09.2020 – 12.2020 Тош ИУВ кардиореаниматсия ва интенсив терапия.</p>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>2020 – 2021 йиллар Нано тиббиёт клиникаси, кардиолог.</p>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>2021 йил – ҳозирги Нано Медиcал клиникаси, кардиореаниматолог.</p>
-                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>2022 (6 кунлик курс) Ўткир ва сурункали оғриқ синдромини даволаш.</p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>{data.experience1_uz}</p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>{data.experience3_uz}</p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>{data.experience4_uz}</p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>2021 йил  </p>
+                <p className={`${mood? 'text-[#5c6177]': 'text-[#dfdede]'} text-[18px] mt-6`}>2022 (6 кунлик курс)</p>
               </div>
             </div>
             <div className="container">

@@ -119,7 +119,7 @@ const Departament = () => {
                         {item.name_uz}
                       </td>
                       <td className="px-6 py-4 max-w-[300px] text-[14px]">
-                        {item.vedio}
+                        {item.description1_uz}
                       </td>
                       <td className="px-6 py-4 max-w-[300px] text-[14px]">
                         {item.description2_uz}

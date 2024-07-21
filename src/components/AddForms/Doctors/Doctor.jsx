@@ -68,11 +68,11 @@ const AdDoctor = () => {
   return (
     <>
       <section className='ml-[400px] container pt-10 bg-blue-50'>
-        <div className='text-blue-950 text-[40px] text-center'>Doctors</div>
+        <div className='text-blue-950 text-[40px] text-center'>Rahbaryat</div>
         <div className='flex items-center justify-between'>
           <input 
             type="text" 
-            placeholder='Search Doctors' 
+            placeholder='Search Rahbar' 
             value={searchQuery}
             onChange={handleSearchChange}
             className='text-[#2D3663] mt-8 w-[750px] bg-white rounded-xl pt-3 pb-3 pl-4' 
@@ -81,7 +81,7 @@ const AdDoctor = () => {
             onClick={handleShow} 
             className='cursor-pointer ml-[330px] flex items-center justify-center gap-3 text-white rounded-xl w-[200px] pt-3 pb-3 mt-[30px] bg-blue-600 hover:bg-slate-500'
           >
-            Add Doctor
+            Add Rahbar
           </button>
         </div>
         <div className='mt-10 rounded-3-xl'>

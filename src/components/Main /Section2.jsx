@@ -56,7 +56,7 @@ const Section2 = () => {
                     }
                 </ul>
                 <div className='flex items-center justify-center mt-[40px]'>
-                    <NavLink to={'/doctors'} className={`${mood? 'text-white bg-blue-950 hover:bg-slate-900': 'text-blue-950 bg-white hover:bg-blue-50'} flex items-center justify-center gap-3  rounded-3xl w-[200px] pt-3 pb-3 mt-[30px] ml-4 bg-blue-950 `}>Rahbarlar <FaArrowCircleRight className='mt-1 w-[18px] h-[18px]' /></NavLink>
+                    <NavLink to={'/rahbar'} className={`${mood? 'text-white bg-blue-950 hover:bg-slate-900': 'text-blue-950 bg-white hover:bg-blue-50'} flex items-center justify-center gap-3  rounded-3xl w-[200px] pt-3 pb-3 mt-[30px] ml-4 bg-blue-950 `}>Rahbarlar <FaArrowCircleRight className='mt-1 w-[18px] h-[18px]' /></NavLink>
                 </div>
             </section>
         </>

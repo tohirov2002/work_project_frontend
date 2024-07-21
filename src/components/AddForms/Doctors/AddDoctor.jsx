@@ -120,7 +120,7 @@ const AddNews = ({ showModal, handleShow, handleData }) => {
                         <div onClick={handleShow} className='bg-blue-500 ml-[250px] w-[30px] cursor-pointer h-[30px] rounded-[50%] flex items-center justify-center'>
                             <ImCross  className='text-white' />
                         </div>
-                        <h1 className='text-[#2D3663] text-[40px] ml-[100px]'>Shifokor qo'shish</h1>
+                        <h1 className='text-[#2D3663] text-[40px] ml-[100px]'>Rahbar qo'shish</h1>
                         <form onSubmit={onCreate}>
                             <MyInput myValue={name} mySetValueChange={setName} myplace='name' />
                             <input className='text-[#2D3663] mt-8 w-[550px] bg-blue-50 rounded-[20px] pt-3 pb-3 pl-4' type="file" onChange={handleFileChange} />

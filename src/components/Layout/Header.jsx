@@ -75,7 +75,7 @@ function Header() {
           <div className='flex  justify-center flex-col mt-[40px] gap-[50px]'>
             <NavLink to={'/about'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz1")}</NavLink>
             <NavLink to={'/services'} className='text-[20px] hover:text-blue-500 text-white hover:cursor-pointer  font-bold shadow-xl dark:text-white'>{t("soz2")}</NavLink>
-            <NavLink to={'/doctors'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz3")}</NavLink>
+            <NavLink to={'/rahbar'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz3")}</NavLink>
             <NavLink to={'/Articles'} className='text-[20px] hover:text-blue-500 text-white  hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz5")}</NavLink>
             <NavLink to={'/connections'} className='text-[20px] hover:text-blue-500 text-white hover:cursor-pointer font-bold shadow-xl dark:text-white'>{t("soz6")}</NavLink>
           </div>
