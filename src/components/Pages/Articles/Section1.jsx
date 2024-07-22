@@ -15,12 +15,13 @@ import Layout from '../../Layout/Index';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Context } from '../../Context/Context';
+import { Link } from 'react-router-dom';
 
 
 const Section1 = () => {
     const params = useParams()
     const [data, setData] = useState([])
-    const {mood} = useContext(Context)
+    const { mood } = useContext(Context)
 
     useEffect(() => {
         const handleData = async () => {
@@ -49,50 +50,52 @@ const Section1 = () => {
                                 <div className='mt-5 flex items-center justify-around gap-3'>
                                     <div className='flex items-center'>
                                         <MdOutlinePersonOutline className='text-[#2D3663] w-[20px] h-[20px]' />
-                                        <h1 className={`${mood? 'text-[#878ca1]': 'text-white'} text-[16px] ml-2`}>SoglomHayot tomonidan</h1>
+                                        <h1 className={`${mood ? 'text-[#878ca1]' : 'text-white'} text-[16px] ml-2`}>G'uzro tuman hokimlik tomonidan</h1>
                                     </div>
                                     <div className='flex items-center'>
-                                        <IoMdTime className={`${mood? 'text-[#2D3663]': 'text-white'} w-[20px] h-[20px]`} />
-                                        <h1 className={`${mood? 'text-[#878ca1]': 'text-white'} text-[16px] ml-2`}>31.03.2023</h1>
+                                        <IoMdTime className={`${mood ? 'text-[#2D3663]' : 'text-white'} w-[20px] h-[20px]`} />
+                                        <h1 className={`${mood ? 'text-[#878ca1]' : 'text-white'} text-[16px] ml-2`}>{data.date_time}</h1>
                                     </div>
                                     <div className='flex items-center'>
-                                        <FaRegEye className={`${mood? 'text-[#2D3663]': 'text-white'} w-[20px] h-[20px]`} />
-                                        <h1 className={`${mood? 'text-[#878ca1]': 'text-white'} text-[16px] ml-2`}>400</h1>
+                                        <FaRegEye className={`${mood ? 'text-[#2D3663]' : 'text-white'} w-[20px] h-[20px]`} />
+                                        <h1 className={`${mood ? 'text-[#878ca1]' : 'text-white'} text-[16px] ml-2`}>{data.views}</h1>
                                     </div>
                                 </div>
-                                <div className={`border_dashet ${mood? 'text-[#878ca1]': 'text-white'}`}></div>
-                                <p className={`${mood? 'text-[#878ca1]': 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Professor Gurkan Telliog'lu gepatobiliar jarrohlik sohasida yetakchi mutaxassis hisoblanadi. U umumiy jarrohlikni organ transplantatsiyasi bilan boshladi va Celveland klinikasida doktor professor Jon Fung bilan malaka oshirdi, u erda Turkiya jigar transplantatsiyasi jamiyati tomonidan yuborildi.</p>
-                                <p className={`${mood? 'text-[#878ca1]': 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Professor Barbaros Chil interventsion radiologiya bo'yicha malakasini AQShdagi Indina universiteti-Purdue universiteti tibbiyot fakultetida olgan. Shuningdek, u 2012 yildan beri Evropa yurak-qon tomir va interventsion radiologiya jamiyatining hamkor a'zosi.</p>
-                                <p className={`${mood? 'text-[#878ca1]': 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Siz quyidagi sohalarda professional maslahat olishingiz mumkin:</p>
+                                <div className={`border_dashet ${mood ? 'text-[#878ca1]' : 'text-white'}`}></div>
+                                <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} mt-5 text-[18px] max-w-[750px]`}>{data.content_uz}</p>
+                                <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} mt-5 text-[18px] max-w-[750px]`}>{data.description_uz}</p>
+                                <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} mt-5 text-[18px] max-w-[750px]`}>{data.advice1_uz}</p>
                                 <div className='flex items-center mt-5'>
-                                    <FaSquareCheck className={`${mood? 'text-green-600': 'text-white'} w-[20px] h-[20px]`} />
-                                    <p className={`${mood? 'text-[#878ca1]': 'text-white'} text-[18px] max-w-[750px] ml-2`}>o't yo'llari va oshqozon osti bezi jarrohligi</p>
+                                    {/* <FaSquareCheck className={`${mood ? 'text-green-600' : 'text-white'} w-[20px] h-[20px]`} /> */}
+                                    <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} text-[18px] max-w-[750px] ml-2`}>{data.advice2_uz}</p>
                                 </div>
                                 <div className='flex items-center mt-2'>
-                                    <FaSquareCheck className={`${mood? 'text-green-600': 'text-white'} w-[20px] h-[20px]`} />
-                                    <p className={`${mood? 'text-[#878ca1]': 'text-white'} text-[18px] max-w-[750px] ml-2`}>laparoskopik jarrohlik</p>
+                                    {/* <FaSquareCheck className={`${mood ? 'text-green-600' : 'text-white'} w-[20px] h-[20px]`} /> */}
+                                    <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} text-[18px] max-w-[750px] ml-2`}>{data.advice3_uz}</p>
                                 </div>
                                 <div className='flex items-center mt-2'>
-                                    <FaSquareCheck className={`${mood? 'text-green-600': 'text-white'} w-[20px] h-[20px]`} />
-                                    <p className={`${mood? 'text-[#878ca1]': 'text-white'} text-[18px] max-w-[750px] ml-2`}>onkologik jarrohlik</p>
+                                    <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} text-[18px] max-w-[750px] ml-2`}>{data.advice4_uz}</p>
                                 </div>
-                                <p className={`${mood? 'text-[#878ca1]': 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Professor Gurkan Telliog'lu gepatobiliar maqsadli mutaxassislik. U umumiy. organ transplantatsiyasi bilan davolash va Kelveland klinikasi Professor John Fun bilan malaka oshirgan.</p>
-                                <p className={`${mood? 'text-[#878ca1]': 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Professor Barbaros Chil AQShdagi Indina universiteti-Purdue universiteti tibbiyot fakultetida intervention radiologiya bo'yicha malakasini olgan. 2012-yildan beri u Yevropa yurak-qon tomir va intervention radiologiya jamiyatining aʼzosi.</p>
-                                <p className={`${mood? 'text-[#878ca1]': 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Malakali mutahasis qabuliga yozilishni unutmang, Joylar soni cheklangan !</p>
+                                <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} mt-5 text-[18px] max-w-[750px]`}>{data.description_uz}</p>
+                                <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} mt-5 text-[18px] max-w-[750px]`}>{data.advice3_uz}</p>
+                                <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} mt-5 text-[18px] max-w-[750px]`}>Qiziqtirgan savollar bulsa, Murojat qilishni unutmang !</p>
                                 <div className='flex items-center mt-5'>
-                                    <FaPhoneAlt className={`${mood? 'text-[#878ca1]': 'text-white'} cursor-pointer w-[20px] h-[20px]`} />
-                                    <p className={`${mood? 'text-[#878ca1]': 'text-white'} cursor-pointer ml-5 text-[18px] text-[#878ca1] max-w-[400px]`}>Phone Number: +998 556 33 11</p>
+                                    <FaPhoneAlt className={`${mood ? 'text-[#878ca1]' : 'text-white'} cursor-pointer w-[20px] h-[20px]`} />
+                                    <Link to={'tel: 908660605'}>
+                                        <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} cursor-pointer ml-5 text-[18px] text-[#878ca1] max-w-[400px]`}>Phone Number: +998 90 866 06 05</p>
+                                    </Link>
                                 </div>
                                 <div className='flex items-center mt-5'>
-                                    <FaLocationDot className={`${mood? 'text-[#878ca1]': 'text-white'} cursor-pointer w-[25px] h-[25px]`} />
-                                    <p className={`${mood? 'text-[#878ca1]': 'text-white'} ml-5 text-[18px] max-w-[400px]`}>Toshkent shahar, Yangihayot tumani, massiv Yo’ldosh 7 kvartal 9 uy</p>
+                                    <FaLocationDot className={`${mood ? 'text-[#878ca1]' : 'text-white'} cursor-pointer w-[25px] h-[25px]`} />
+                                    <p className={`${mood ? 'text-[#878ca1]' : 'text-white'} ml-5 text-[18px] max-w-[400px]`}>	G'uzor shahri, Mustaqillik
+                                        ko'chasi 14-uy</p>
                                 </div>
                                 <div className='flex items-center mt-[30px] gap-3'>
-                                    <FaFacebook className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
-                                    <FaWhatsappSquare className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
-                                    <FaTelegram className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
-                                    <FaLinkedin className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
-                                    <FaSquareTwitter className={`cursor-pointer w-[35px] h-[35px] ${mood? 'text-blue-600': 'text-white'}`} />
+                                    <FaFacebook className={`cursor-pointer w-[35px] h-[35px] ${mood ? 'text-blue-600' : 'text-white'}`} />
+                                    <FaWhatsappSquare className={`cursor-pointer w-[35px] h-[35px] ${mood ? 'text-blue-600' : 'text-white'}`} />
+                                    <FaTelegram className={`cursor-pointer w-[35px] h-[35px] ${mood ? 'text-blue-600' : 'text-white'}`} />
+                                    <FaLinkedin className={`cursor-pointer w-[35px] h-[35px] ${mood ? 'text-blue-600' : 'text-white'}`} />
+                                    <FaSquareTwitter className={`cursor-pointer w-[35px] h-[35px] ${mood ? 'text-blue-600' : 'text-white'}`} />
                                 </div>
                             </div>
                         </div>

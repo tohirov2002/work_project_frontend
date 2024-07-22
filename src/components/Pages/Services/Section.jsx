@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { LiaBrainSolid } from "react-icons/lia";
 import { LiaHeartbeatSolid } from "react-icons/lia";
 import { FaArrowCircleRight } from "react-icons/fa";
@@ -12,20 +12,33 @@ import bed2 from '../../../assets/images/guzor.jpg'
 import bed3 from '../../../assets/images/savol.jpg'
 import bed4 from '../../../assets/images/masjid.jpg'
 import foods from '../../../assets/images/savol.jpg'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import kitchen3 from '../../../assets/images/kitchen3.jpg'
 import Forms from '../../Forms'
 import { Context } from '../../Context/Context'
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 const Section = () => {
     const [showModal, setModal] = useState(false)
     const { mood } = useContext(Context)
+    const [data, setData] = useState([]);
     const { t } = useTranslation()
 
     const handleShow = () => {
         setModal(!showModal)
     }
+    useEffect(() => {
+        const handleData = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/department/');
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        handleData();
+    }, [])
     return (
         <>
             <section className='mt-[20px]'>
@@ -45,76 +58,44 @@ const Section = () => {
                     <div className='flex justify-between mt-[30px] services'>
                         <div className='section1_services1'>
                             <ul className='flex items-center flex-col'>
-                                <li className=' text-white w-[260px] p-5 rounded-lg   bg-blue-950 hover:cursor-pointer flex  justify-between'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-white ' />
-                                    <p className='text-[24px] font-bold text-white mt-2'>невропатолог</p>
-                                </li>
-                                <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>гемодиализ</p>
-                                </li>
-                                <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>гемодиализ</p>
-                                </li>
-                                <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>невропатолог</p>
-                                </li>
-                                <li className='item mt-1 bg-white w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
-                                    <LiaHeartbeatSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>кардиолог</p>
-                                </li>
-                                <li className='mt-1 bg-white item w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
-                                    <LiaToothSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>Stamatalog</p>
-                                </li>
-                                <li className='bg-white mt-1 item w-[260px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex justify-between'>
-                                    <LiaToothSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>Stamatalog</p>
-                                </li>
+                                {
+                                    data.slice(0, 6).map((item) => (
+                                        <NavLink to={`/sections/${item.id}`}>
+                                            <li key={item.id} className='item bg-white w-[300px] p-5 mt-3 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
+                                                <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
+                                                <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
+                                            </li>
+                                        </NavLink>
+                                    ))
+                                }
                             </ul>
                         </div>
                         <div className='mr-[50px] p-[50px] rounded-md bg-blue-50 section1_div1 section1_services'>
                             <ul className='flex items-center justify-between gap-5 section1_list1'>
-                                <li className='item bg-white w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>невропатолог</p>
-                                </li>
-                                <li className='item bg-white w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>гемодиализ</p>
-                                </li>
-                                <li className='item bg-white w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>гемодиализ</p>
-                                </li>
-                                <li className='item bg-white w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>невропатолог</p>
-                                </li>
-                                <li className='item bg-white w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaHeartbeatSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>кардиолог</p>
-                                </li>
+                                {
+                                    data.slice(0, 4).map((item) => (
+                                        <NavLink to={`sections/${item.id}`}>
+                                            <li key={item.id} className='item bg-white w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
+                                                <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
+                                                <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
+                                                {console.log(item.name_uz)}
+                                            </li>
+                                        </NavLink>
+                                    ))
+                                }
                             </ul>
                             <ul className='flex items-center justify-between bg-blue-50 mt-[50px] gap-5 section1_list1'>
-                                <li className='bg-white item  w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>Лор</p>
-                                </li>
-                                <li className='bg-white item w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaBrainSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>Офтальмолог</p>
-                                </li>
-                                <li className='bg-white item w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaToothSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>Stamatalog</p>
-                                </li>
-                                <li className='bg-white item w-[250px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                    <LiaHeartbeatSolid className='icon1 w-[50px] h-[50px] text-blue-950 ' />
-                                    <p className='text-[24px] font-bold text-blue-950 mt-2 '>Денстометрия</p>
-                                </li>
+                                {
+                                    data.slice(2, 6).map((item) => (
+                                        <NavLink to={`sections/${item.id}`}>
+                                            <li key={item.id} className='item bg-white w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
+                                                <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
+                                                <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
+                                                {console.log(item.name_uz)}
+                                            </li>
+                                        </NavLink>
+                                    ))
+                                }
                             </ul>
                         </div>
                         <div className='bg-[#EDF3F6] p-[60px] rounded-2xl ml-[50px] section1_services3'>

@@ -39,7 +39,7 @@ const Section = () => {
                 <div className='borders'></div>
                 <ul className='mt-[100px] about flex justify-between news_list'>
                     {
-                        data.map((item) => (
+                        data.slice(0,3).map((item) => (
                             <li key={item.id} className='cursor-pointer news_item'>
                                 <img className='max-w-[450px] h-[350px] rounded-md hover_img news_img' src={item.image} alt="turk" />
                                 <NavLink to={`/maqola/${item.id}`}><p className={`${mood? 'text-[#2D3663] ': 'text-white'} mt-5 font-bold text-[18px] max-w-[400px]`}>{item.title_uz}</p></NavLink>
