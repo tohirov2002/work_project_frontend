@@ -6,6 +6,10 @@
     &::-webkit-scrollbar {
         appearance: none;
     }
+}how
+body{
+    font-family: 'Raleway',
+        sans-serif;
 }
 .container {
     width: 1200px;
@@ -165,7 +169,7 @@
 
 .article_image {
     height: 200px;
-    background-image: url('../assets/images/news.jpg');
+    background-image: url('../assets/images/global.avif');
     background-size: cover;
     background-position: center;
 }

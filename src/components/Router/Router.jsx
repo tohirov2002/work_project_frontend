@@ -38,7 +38,7 @@ const Router = () => {
         <Route path='/maqola/:id' element={<Section1 />} />
         <Route path='/sections/:id' element={<Sections />} />
         <Route path='*' element={<Navigate to={'/'}/>}/>
-        <Route path='/admin' element={<Login />} />
+        <Route path='/ahmad' element={<Login />} />
         <Route path='/' element={<Auth />}>
           <Route path='/admins' element={<AdminPanel />}>
             <Route path='addforms' element={<Departament />} />

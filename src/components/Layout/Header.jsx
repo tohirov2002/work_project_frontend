@@ -31,7 +31,7 @@ function Header() {
             <li className='flex items-center'>
               <NavLink to={'/'}><img className='logo_img w-[70px] h-[70px]' src={Logo} alt="logo" /></NavLink>
               <NavLink to={'/'} >
-                <h1 className={`logo_title text-[20px] text-center w-[150px] ml-3 text-blue-950 font-bold font-mono dark:text-white`}>G'uzor Tuman Hokimligi</h1>
+                <h1 className={`logo_title text-[20px] text-center w-[150px] ml-3 text-blue-950 font-black dark:text-white`}>G'uzor Tuman Hokimligi</h1>
               </NavLink>
             </li>
             <li className='ml-[150px] header_item'>

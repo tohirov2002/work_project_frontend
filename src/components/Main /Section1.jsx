@@ -62,68 +62,43 @@ const Section1 = () => {
     return (
         <>
             <section className='container main_section1_div pt-[50px] flex items-center justify-between'>
-                <div className={`shadow-xl bg-[#2d3663] ${mood ? '' : 'bg-white'} max-w-[400px] p-[30px] rounded-[10px] pl-[30px] h-[415px] pb-[50px] section1_left`}>
+                <div className={`shadow-xl bg-[#3b4fc0] ${mood ? '' : 'bg-white'} max-w-[400px] p-[30px] rounded-[10px] pl-[30px] h-[415px] pb-[50px] section1_left`}>
                     <h1 className={`${mood ? 'text-white' : 'text-[#2D3663]'} text-[32px] font-bold  mt-4 ml-4`}>{t("title")}</h1>
                     <p className={`${mood ? 'text-white' : 'text-[#2D3663]'} text-[20px] font-normal max-w-[300px] mt-4 ml-4 section1_left_title`}>{t("text")}</p>
                     <button className=' text-white rounded-3xl w-[150px] pt-2 pb-2 mt-[30px] ml-4 bg-blue-600 hover:bg-blue-800'>{t("Batafsil")}</button>
                 </div>
-                <div className='max-w-[1000px] mr-[50px] p-[50px] rounded-md bg-blue-50 section1_right'>
-                    <ul className='flex items-center justify-between gap-5 section1_list'>
+                <div className='max-w-[1000px] mr-[50px] p-[50px] rounded-md bg-blue-50 section1_right '>
+                    <div className='section1_container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                         {
-                            data.slice(0, 3).map((item) => (
-                                <NavLink to={`sections/${item.id}`}>
-                                    <li key={item.id} className='item bg-white w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                        <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
-                                        <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
-                                        {console.log(item.name_uz)}
-                                    </li>
+                            data.slice(0, 6).map((item) => (
+                                <NavLink to={`sections/${item.id}`} key={item.id}>
+                                    <div className='item bg-white p-5 h-[150px] rounded-lg hover:bg-[#3b4fc0] hover:cursor-pointer flex flex-col items-center justify-center'>
+                                        <img src={item.image} className='icon1 w-[50px] h-[50px] bg-white' alt={item.name_uz} />
+                                        <p className='text-[18px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
+                                    </div>
                                 </NavLink>
                             ))
                         }
-                    </ul>
-                    <ul className='flex items-center justify-between bg-blue-50 mt-[50px] gap-5 section1_list'>
-                        {
-                            data.slice(1, 4).map((item) => (
-                                <NavLink to={`sections/${item.id}`}>
-                                    <li key={item.id} className='item bg-white w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                        <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
-                                        <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
-                                        {console.log(item.name_uz)}
-                                    </li>
-                                </NavLink>
-                            ))
-                        }
-                    </ul>
+                    </div>
                 </div>
             </section>
             <section className='container mt-[50px]'>
                 <div className='mr-[50px] p-[50px] rounded-md bg-blue-50 section1_div1'>
-                    <ul className='flex items-center justify-between gap-5 section1_list1'>
-                        {
-                            data.slice(2, 6).map((item) => (
-                                <NavLink to={`sections/${item.id}`}>
-                                    <li key={item.id} className='item bg-white w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                        <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
-                                        <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
-                                        {console.log(item.name_uz)}
-                                    </li>
-                                </NavLink>
-                            ))
-                        }
-                    </ul>
-                    <ul className='flex items-center justify-between bg-blue-50 mt-[50px] gap-5 section1_list1'>
-                        {
-                            data.slice(0, 4).map((item) => (
-                                <NavLink to={`sections/${item.id}`}>
-                                    <li key={item.id} className='item bg-white w-[300px] p-5 rounded-lg hover:bg-blue-950 hover:cursor-pointer flex flex-col items-center justify-center'>
-                                        <img src={item.image} className='icon1 w-[50px] h-[50px] text-blue-950' alt={item.name_uz} />
-                                        <p className='text-[24px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
-                                        {console.log(item.name_uz)}
-                                    </li>
-                                </NavLink>
-                            ))
-                        }
-                    </ul>
+                    <div className='section1_container'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+                            {
+                                data.slice(6, ).map((item) => (
+                                    <NavLink to={`sections/${item.id}`} key={item.id}>
+                                        <div className='item bg-white p-5 rounded-lg hover:bg-[#3b4fc0] hover:cursor-pointer flex flex-col items-center justify-center'>
+                                            <img src={item.image} className='icon1 w-[50px] h-[50px] bg-white' alt={item.name_uz} />
+                                            <p className='text-[18px] font-bold text-blue-950 mt-2 '>{item.name_uz}</p>
+                                            {console.log(item.name_uz)}
+                                        </div>
+                                    </NavLink>
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className='container mt-[100px] flex justify-between quality'>

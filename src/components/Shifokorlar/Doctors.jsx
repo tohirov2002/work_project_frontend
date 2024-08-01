@@ -29,30 +29,20 @@ const Doctors = () => {
             </div>
           </div>
           <div className="container">
-            <ul className='mt-[100px] flex items-center justify-between gap-5 doctors_div'>
+            <div className='mt-[100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 doctors_div'>
               {
-                data.slice(0, 3).map((item) => (
-                  <li key={item.id} className='hover:shadow-2xl hover:cursor-pointer shadow-xl bg-[#EDF3F6] p-[50px] rounded-xl max-w-[650px]  flex flex-col items-center justify-center text-center doctors_box'>
-                    <img className='hover:shadow-xl mt-2 image w-[350px] h-[350px] doctors_img' src={item.image} alt="alisher" />
-                    <h1 className='text-[32px] max-w-[300px] mt-5 h-[80px] font-bold text-blue-950 doctor_title'>{item.name}</h1>
-                    <NavLink to={`/doctor/${item.id}`} className='hover:bg-slate-800 text-[22px] mt-8 w-[290px] text-white pt-1 pb-1 rounded-[30%] bg-blue-950'>{item.category_name}</NavLink>
-                    <p className='mt-4 text-[18px] text-[#4c547c]'>{item.category_name}</p>
-                  </li>
+                data.map((item) => (
+                  <NavLink key={item.id} to={`/doctor/${item.id}`}>
+                    <div className='hover:shadow-2xl hover:cursor-pointer mt-8 shadow-xl bg-[] p-[50px] rounded-xl max-w-[650px] flex flex-col items-center justify-center text-center doctors_box'>
+                      <img className='hover:shadow-xl mt-2 rounded-2xl w-[350px] h-[350px] doctors_img' src={item.image} alt="alisher" />
+                      <h1 className='text-[32px] max-w-[300px] mt-5 h-[80px] font-bold text-blue-950 doctor_title'>{item.name}</h1>
+                      <NavLink to={`/doctor/${item.id}`} className='hover:bg-slate-800 text-[22px] mt-8 w-[290px] text-white pt-1 pb-1 rounded-xl bg-blue-950'>{item.category_name}</NavLink>
+                      <p className='mt-4 text-[18px] text-[#4c547c]'>{item.category_name}</p>
+                    </div>
+                  </NavLink>
                 ))
               }
-            </ul>
-            <ul className='mt-[100px] flex items-center justify-between gap-5 doctors_div'>
-              {
-                data.slice(3, ).map((item) => (
-                  <li key={item.id} className='hover:shadow-2xl hover:cursor-pointer shadow-xl bg-[#EDF3F6] p-[50px] rounded-xl max-w-[650px]  flex flex-col items-center justify-center text-center doctors_box'>
-                    <img className='hover:shadow-xl mt-2 image w-[350px] h-[350px] doctors_img' src={item.image} alt="alisher" />
-                    <h1 className='text-[32px] max-w-[300px] mt-5 h-[80px] font-bold text-blue-950 doctor_title'>{item.name}</h1>
-                    <NavLink to={`/doctor/${item.id}`} className='hover:bg-slate-800 text-[22px] mt-[70px] w-[290px] text-white pt-1 pb-1 rounded-[30%] bg-blue-950'>{item.category_name}</NavLink>
-                    <p className='mt-4 text-[18px] text-[#4c547c]'>{item.category_name}</p>
-                  </li>
-                ))
-              }
-            </ul>
+            </div>
           </div>
         </section>
       </Layout>
